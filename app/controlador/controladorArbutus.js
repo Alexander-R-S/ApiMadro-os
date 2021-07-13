@@ -1,4 +1,4 @@
-const ModeloArbutus =require('../modelos/modelosArbutus');
+const ModeloArbutus =require('../modelos/modeloArbutus');
 
 function index(req,res){
      // console.log('ok');

@@ -4,7 +4,8 @@
   "description": "proyecto creado para poder identificar y buscar los diferentes tipos de madroños que existen en mexico, esto mediante sus diferentes caracteristicas",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"nodemon server.js"
   },
   "author": "Techno Genesis",
   "license": "ISC",
