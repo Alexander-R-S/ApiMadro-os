@@ -1,7 +1,7 @@
 const express = require('express');
 //Instanciar rutas
 const rutasArbutus=require('./rutas/rutasArbutus');
-const rutasComaros=require('./rutas/rutasComaros');
+const rutasComaros=require('./rutas/rutasComarostaphylis');
 const app=express();
 
 app.use(express.json());
