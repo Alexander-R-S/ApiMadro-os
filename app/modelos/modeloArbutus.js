@@ -6,7 +6,7 @@ const ArbutusSchema = new mongoose.Schema({
         require:true
     },
     imagenes:{
-        type:String,
+        type:Object,
         require:true
     },
     habito:{
@@ -42,7 +42,7 @@ const ArbutusSchema = new mongoose.Schema({
         require:true
     },
     ubicacion:{
-        type:String,
+        type:Object,
         require:true
     }
 })
