@@ -5,18 +5,43 @@ const ComarostaSchema = new mongoose.Schema({
         type:String,
         require:true
     },
-    codigo:{
-        type:Number,
+    imagenes:{
+        type:String,
         require:true
     },
-    precio:{
-        type:Number,
+    habito:{
+        type:String,
         require:true
     },
-    existencia:{
-        type:Number,
-        default:5
+    corteza_ramas:{
+        type:String,
+        require:true
+    },
+    corteza_ramillas:{
+        type:String,
+        require:true
+    },
+    peciolos:{
+        type:String,
+        require:true
+    },
+    hojas:{
+        type:String,
+        require:true
+    },
+    enves:{
+        type:String,
+        require:true
+    },
+    flores:{
+        type:String,
+        require:true
+    },
+    ubicacion:{
+        type:String,
+        require:true
     }
+
 })
 
 const Comarosta = mongoose.model('Comarosta', ComarostaSchema);
