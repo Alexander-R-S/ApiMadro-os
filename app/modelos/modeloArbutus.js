@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const VinosSchema = new mongoose.Schema({
+const ArbutusSchema = new mongoose.Schema({
     nombre:{
         type:String,
         require:true
@@ -19,5 +19,5 @@ const VinosSchema = new mongoose.Schema({
     }
 })
 
-const Vino = mongoose.model('Vino', VinosSchema);
-module.exports = Vino;
+const Arbutus = mongoose.model('Arbutus', ArbutusSchema);
+module.exports = Arbutus;

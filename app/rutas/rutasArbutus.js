@@ -1,7 +1,7 @@
 const express=require('express');
+const Router = express.Router();
 const ControladorArbutus=require('../controlador/controladorArbutus');
 
-const Router=express.Router();
 
 Router.get('/',ControladorArbutus.index)
 .get('/:key/:value',ControladorArbutus.buscar,ControladorArbutus.mostrar);

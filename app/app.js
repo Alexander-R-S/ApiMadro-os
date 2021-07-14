@@ -1,7 +1,7 @@
 const express = require('express');
 //Instanciar rutas
 const rutasArbutus=require('./rutas/rutasArbutus');
-const rutasComaros=require('./rutas/rutasComarostaphylis');
+const rutasComarosta=require('./rutas/rutasComarostaphylis');
 const app=express();
 
 app.use(express.json());
@@ -9,6 +9,6 @@ app.use(express.urlencoded({ extended: false }));
 
 //Generar endpoints
 app.use('/arbutus',rutasArbutus);
-app.use('/comarostaphylis',rutasComaros);
+app.use('/comarosta',rutasComarosta);
 
 module.exports= app;
