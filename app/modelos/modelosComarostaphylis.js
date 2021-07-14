@@ -44,5 +44,5 @@ const ComarostaSchema = new mongoose.Schema({
 
 })
 
-const Comarosta = mongoose.model('Comarosta', ComarostaSchema);
-module.exports = Comarosta;
+const comarostaphylis = mongoose.model('comarostaphylis', ComarostaSchema);
+module.exports = comarostaphylis;
