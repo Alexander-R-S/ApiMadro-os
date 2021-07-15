@@ -1,5 +1,6 @@
 const ModeloComarosta =require('../modelos/modelosComarostaphylis');
 
+
 function index(req,res){
      // console.log('ok');
     ModeloComarosta.find({})
@@ -13,7 +14,7 @@ function buscar(req,res,next){
     let consulta={};
     consulta[req.params.key]=req.params.value;
     ModeloComarosta.find(consulta).then(comarosta=>{
-        if(!arbutus.length) return next();
+        if(!comarosta.length) return next();
         req.body.comarosta=comarosta;
         return next();
     }).catch(error=>{req.body.error=error;
