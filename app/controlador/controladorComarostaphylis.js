@@ -12,7 +12,9 @@ function index(req,res){
 
 function buscar(req,res,next){
     let consulta={};
-    consulta[req.params.key]=req.params.value;
+    //consulta[req.params.key] = { '$regex': req.params.value, '$options': 'i' } && { '$regex': req.params.value, '$options': 'i' };
+    consulta[req.params.key] = { '$regex': req.params.value, '$options': 'i' };
+    //consulta[req.params.key]=req.params.value;
     ModeloComarosta.find(consulta).then(comarosta=>{
         if(!comarosta.length) return next();
         req.body.comarosta=comarosta;
@@ -21,6 +23,33 @@ function buscar(req,res,next){
         next();
     })
 }
+
+/// PREUBAS DE BUSQUEDAD
+function buscarvarios(req,res,next){
+    let consulta={};
+    consulta[req.params.key] = { '$regex': req.params.value, '$options': 'i' } && { '$regex': req.params.value, '$options': 'i' };
+    ModeloComarosta.find(consulta).then(comarosta=>{
+        if(!comarosta.length) return next();
+        req.body.comarosta=comarosta;
+        return next();
+    }).catch(error=>{req.body.error=error;
+        next();
+    })
+}
+
+function buscaror(req,res,next){
+    let consulta={};
+    consulta[req.params.key] = { '$regex': req.params.value, '$options': 'i' } || { '$regex': req.params.value, '$options': 'i' } || { '$regex': req.params.value, '$options': 'i' };
+    ModeloComarosta.find(consulta).then(comarosta=>{
+        if(!comarosta.length) return next();
+        req.body.comarosta=comarosta;
+        return next();
+    }).catch(error=>{req.body.error=error;
+        next();
+    })
+}
+///
+
 function mostrar(req,res){
     if(req.body.error) return res.status(500).send({error});
     if(!req.body.comarosta) return res.status(404).send({message:'No hay resultados'});
@@ -31,5 +60,7 @@ function mostrar(req,res){
 module.exports={
     index,
     buscar,
+    buscarvarios,
+    buscaror,
     mostrar
 }
