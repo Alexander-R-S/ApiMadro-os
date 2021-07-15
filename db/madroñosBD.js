@@ -856,5 +856,5 @@ db.comarostaphylis.insert([
     }
 ]);
 
-
+db.arbutus.find({"habito":"arbol","ubicacion":""}) 
 

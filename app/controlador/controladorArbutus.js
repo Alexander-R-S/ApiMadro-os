@@ -21,6 +21,23 @@ function buscar(req,res,next){
         next();
     })
 }
+
+function buscar2(req,res,next){
+
+    console.log(req.params.val1);
+    console.log(req.params.val2);
+
+
+    // consulta[req.params.key]=req.params.value;
+    // ModeloArbutus.find(consulta).then(arbutus=>{
+    //     if(!arbutus.length) return next();
+    //     req.body.arbutus=arbutus;
+    //     return next();
+    // }).catch(error=>{req.body.error=error;
+    //     next();
+    // })
+}
+
 function mostrar(req,res){
     if(req.body.error) return res.status(500).send({error});
     if(!req.body.arbutus) return res.status(404).send({message:'No hay resultados'});
