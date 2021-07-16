@@ -137,7 +137,7 @@ db.arbutus.insert([
             "imagen2": "img/Arbutus/A.mollis/img2.jpg",
             "imagen3": "img/Arbutus/A.mollis/img3.jpg"
         },
-        "habito": "arbusto usualmente formando manchones, rara vez arbolitos hasta de 2.5 m",
+        "habito": "arbusto usualmente formando manchones, rara vez àrbolitos hasta de 2.5 m",
         "corteza_ramas": "exfoliante (lisa)",
         "corteza_ramillas": "lisa",
         "peciolos": "color rosado, con pubescencia. Algunas poblaciones del centro de México con pelos glandulares",
@@ -856,5 +856,5 @@ db.comarostaphylis.insert([
     }
 ]);
 
-db.arbutus.find({"habito":"arbol","ubicacion":""}) 
+db.arbutus.find({"habito":{ '$regex':'arbol', '$options': 'i' },"ubicacion":{ '$regex':'Jalisco', '$options': 'i' }}) 
 

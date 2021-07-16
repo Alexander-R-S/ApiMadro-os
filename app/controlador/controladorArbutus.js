@@ -21,17 +21,13 @@ function buscar(req,res,next){
         next();
     })
 }
+function regex(param){
+    param={ '$regex':param, '$options': 'i' };
+    return param;
+}
 
 function buscar2(req,res,next){
-    let nombre=0;
-    let habito=0;
-    let corteza1=0;
-    let corteza2=0
-    let peciolos=0;
-    let hojas=0;
-    let haz=0;
-    let enves=0;
-    let flores=0;
+    let nombre,habito,corteza1,corteza2,peciolos,hojas,haz,enves,flores,ubicacion;
     let query={};
 
     nombre=req.body.nombre;
@@ -43,44 +39,61 @@ function buscar2(req,res,next){
     haz=req.body.haz;
     enves=req.body.enves;
     flores=req.body.flores;
-    if (nombre!="" || habito!="") {
-           console.log(nombre);
-           query={
-               nombre,
-               habito
-        };
-           console.log(query);
-        }   
+    ubicacion=req.body.ubicacion;
 
-//     for (let index = 0; index < req.body.length; index++) {
-//         if (nombre!="") {
-//                console.log(nombre);
-//             }   
-// }
+    if (nombre) {
+        nombre=regex(nombre);
+        query.nombre=nombre;
+    }
+    if(habito){
+        habito=regex(habito);
+        query.habito=habito;
+    }
+    if(corteza1){
+        corteza1=regex(corteza1);
+        query.corteza1=corteza1;
+    }
+    if(corteza2){
+        corteza2=regex(corteza2);
+        query.corteza2=corteza2;
+    }
+    if(peciolos){
+        peciolos=regex(peciolos);
+        query.peciolos=peciolos;
+    }
+    if(hojas){
+        hojas=regex(hojas);
+        query.hojas=hojas;
+    }
+    if(haz){
+        haz=regex(haz);
+        query.haz=haz;
+    }
+    if(enves){
+        enves=regex(enves);
+        query.enves=enves;
+    }
+    if(flores){
+        flores=regex(flores);
+        query.flores=flores;
+    }
+    if(ubicacion){
+        ubicacion=regex(ubicacion);
+        query.ubicacion=ubicacion;
+    }
 
-    // for (let index = 0; index < req.body.length; index++) {
-    //     if (nombre!="") {
-    //         console.log(nombre);
-    //         console.log('hola');
-    //     }   
-    // }
-
-    // console.log(habito);
-    // console.log(corteza1);
-    // console.log(corteza2);
-    // console.log(peciolos);
-    // console.log(hojas);
-    // console.log(haz);
-    // console.log(enves);
-    // console.log(flores);
-
-    // ModeloArbutus.find(consulta).then(arbutus=>{
-    //     if(!arbutus.length) return next();
-    //     req.body.arbutus=arbutus;
-    //     return next();
-    // }).catch(error=>{req.body.error=error;
-    //     next();
-    // })
+     console.log(query);
+    ModeloArbutus.find(query).then(arbutus=>{
+        if(!arbutus.length) return next();
+        req.body.arbutus=arbutus;
+        return next();
+    }).catch(error=>{req.body.error=error;
+        next();
+    })
+     //    query={
+        //        nombre,
+        //        habito
+        // };
 }
 
 function mostrar(req,res){
