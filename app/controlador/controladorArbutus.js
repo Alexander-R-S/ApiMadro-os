@@ -51,11 +51,11 @@ function buscar2(req,res,next){
     }
     if(corteza1){
         corteza1=regex(corteza1);
-        query.corteza1=corteza1;
+        query.corteza_ramas=corteza1;
     }
     if(corteza2){
         corteza2=regex(corteza2);
-        query.corteza2=corteza2;
+        query.corteza_ramillas=corteza2;
     }
     if(peciolos){
         peciolos=regex(peciolos);
