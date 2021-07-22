@@ -21,6 +21,8 @@ function buscar(req,res,next){
         next();
     })
 }
+
+//Funcion para agregarle el operador LIKE a los valores de la consulta
 function regex(param){
     param={ '$regex':param, '$options': 'i' };
     return param;
@@ -82,10 +84,16 @@ function buscar2(req,res,next){
         query.ubicacion=ubicacion;
     }
 
-     console.log(query);
+    //console.log(query);     
+
+ ModeloArbutus.countDocuments(query).then(cifra=>{
+        req.body.cifra2=cifra
+        console.log(cifra);
+    }).catch(error=>{req.body.error=error;})
+
     ModeloArbutus.find(query).then(arbutus=>{
         if(!arbutus.length) return next();
-        req.body.arbutus=arbutus;
+        req.body.arbutus=arbutus;  
         return next();
     }).catch(error=>{req.body.error=error;
         next();
@@ -100,7 +108,8 @@ function mostrar(req,res){
     if(req.body.error) return res.status(500).send({error});
     if(!req.body.arbutus) return res.status(404).send({message:'No hay resultados'});
     let arbutus=req.body.arbutus;
-    return res.status(200).send({arbutus});
+    let count=req.body.cifra2;
+    return res.status(200).send({arbutus,count});
 }
 
 module.exports={
