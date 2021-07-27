@@ -30,7 +30,7 @@ function regex(param){
 }
 
 function buscarvarios(req,res,next){
-    let nombre,habito,corteza1,corteza2,peciolos,hojas,haz,enves,flores,ubicacion;
+    let nombre,habito,peciolos,hojas,haz,enves,flores,ubicacion;
     let query={};
 
     nombre=req.body.nombre;
@@ -85,7 +85,11 @@ function buscarvarios(req,res,next){
         query.ubicacion=ubicacion;
     }
 
-    console.log(query);
+    console.log("consulta",query);
+    ModeloComarosta.countDocuments(query).then(cifra=>{
+        console.log("numero de objetos",cifra);
+    }).catch(error=>{req.body.error=error;})
+
     ModeloComarosta.find(query).then(comarosta=>{
         if(!comarosta.length) return next();
         req.body.comarosta=comarosta;
