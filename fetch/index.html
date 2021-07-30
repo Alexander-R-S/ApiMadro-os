@@ -1,40 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<!-- Required meta tags -->
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<title>Page Title</title>
 
-		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-	</head>
-	<body>
-		<h1>Hello, world!</h1>
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Page Title</title>
 
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-						<div class="input-group">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+		integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+	<!-- Font-Awesome -->
+	<script src="https://kit.fontawesome.com/a16e898408.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<h1>Hello, world!</h1>
+
+	<!-- <div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="input-group">
 								<input type="text" class="form-control" name="arbol" id="input" aria-describedby="basic-addon1">
 								<button type="button" class="btn btn-dark" id="buscar">Buscar</button>
 							</div>
-				</div>
-				<div class="col-12" id="cont1">
-					
-				</div>	
-				<div class="col-12" id="cont2">
-					
-				</div>	
 			</div>
-			
+			<div class="col-12" id="cont1">
+
+			</div>
+			<div class="col-12" id="cont2">
+
+			</div>
 		</div>
 
-		<!-- Optional JavaScript -->
-		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
-		<script src="js/fetch.js"></script>
-	</body>
+	</div> -->
+	<style>
+		.input-hidden {
+			position: absolute;
+			left: -9999px;
+		}
+
+		input[type=checkbox]:checked+label>img {
+			border: 1px solid #fff;
+			box-shadow: 0 0 3px 3px rgb(2, 49, 255);
+		}
+
+		/* Stuff after this is only to make things more pretty */
+		input[type=checkbox]+label>img {
+			width: 15rem;
+			height: 17rem;
+			transition: 500ms all;
+		}
+
+		input[type=checkbox]:checked+label>img {
+			transform:
+				rotateZ(-10deg) rotateX(10deg);
+		}
+	</style>
+
+	<div class="container pt-5 w-75 bg-light">
+		<div class="row filtro" id="habito">
+			<div class="col-12"><h2 class="text-center p-4">Selecciona habito</h2></div>
+			<div class="col-6 text-center">
+				<input type="checkbox" name="" id="arbol" class="input-hidden habito2" />
+				<label for="arbol">
+					<img src="img/arbol.jpg" alt="" />
+					<h5>Arbol</h5>
+				</label>
+			</div>
+			<div class="col-6 text-center">
+				<input type="checkbox" name="" id="arbusto" class="input-hidden habito2" />
+				<label for="arbusto">
+					<img src="img/arbol.jpg" alt="" />
+					<h5>Arbusto</h5>
+				</label>
+			</div>
+		</div>
+
+		<div class="row filtro" id="flores" hidden>
+			<div class="col-12"><h2 class="text-center p-4">Selecciona color de flor</h2></div>
+			<div class="col-6 text-center">
+				<input type="checkbox" name="" id="rosas" class="input-hidden flor" />
+				<label for="rosas">
+					<img src="img/arbol.jpg" alt="" />
+					<h5>Rosas</h5>
+				</label>
+			</div>
+			<div class="col-6 text-center">
+				<input type="checkbox" name="" id="rosas" class="input-hidden flor"/>
+				<label for="rosas">
+					<img src="img/arbol.jpg" alt="" />
+					<h5>Arbusto</h5>
+				</label>
+			</div>
+		</div>
+			<!-- <div class="col-12">`
+				<div class="container" id="habito">
+					<h3 class="text-center display-4 p-3">Selecciona habito</h3>
+					<div class="card-deck-wrapper">
+						<div class="card-deck">
+							
+							<div class="card p-2">
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="flexRadioDefault"
+										id="flexRadioDefault1">
+
+									<label class="form-check-label" for="flexRadioDefault1">
+										Default radio
+									</label>
+								</div>
+
+								<a class="card-block stretched-link text-decoration-none p-3" href>
+									<h4 class="card-title text-center text-success">Arbusto</h4>
+								</a>
+							</div>
+							<div class="card p-2">
+								<a class="card-block stretched-link text-decoration-none p-3" href="/">
+									<h4 class="card-title text-center text-warning">Arbol</h4>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> -->
+		
+
+		<div class="row pt-5 pb-4">
+			<div class="col-4 text-left">
+				<button type="button" class="btn btn-primary" id="reinicio">Iniciar nuevamente</button>
+			</div>
+
+			<div class="col-4 text-center">
+				<button type="button" class="btn btn-primary" id="prev" hidden>Anterior</button>
+				<button type="button" class="btn btn-primary" id="next">Siguiente</button>
+			</div>
+			<div class="col-4 text-right">
+				<button type="button" class="btn btn-danger">Ver&nbsp<span id="num">0</span>&nbsp Especies</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+		integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+		crossorigin="anonymous"></script>
+	<script src="js/fetch.js"></script>
+</body>
+
 </html>
