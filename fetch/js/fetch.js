@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-
 	function fetch1() {
 		fetch('http://localhost:3000/arbutus', {
 			method: 'GET',
@@ -92,44 +91,59 @@ $(document).ready(function () {
 	var obj = {};
 	var cont="";
 	var nex="";
+	var prev="";
 
 	$('.habito2').on('click', function () {
 		var habito = $(this).prop('id');
-		obj.habito = habito;
+		if($(this).prop('checked')==false){
+			obj.habito = "";
+		}else{
+			obj.habito = habito;
+			fetchpost(obj);
+		}
 	});
 
-	function siguiente() {
+	$('.flor').on('click', function () {
+		var flores = $(this).prop('id');
+		if($(this).prop('checked')==false){
+			obj.flores = "";
+		}else{
+			obj.flores = flores;
+			fetchpost(obj);
+		}
+	});
+
+	function mostrar() {
 		$('.filtro').each(function (index, element) {
-			if ($(this).prop('hidden', false)) {
-				cont = $(this).prop('id');
-				nex = $("#" + cont).next("row").prop('id');
+			if ($(this).prop('hidden')==false) {
+				prev = $(this).prev().attr('id');
+				cont = $(this).attr('id');
+				nex = $(this).next().attr('id');
 			}
 		});
-		return cont,nex;
+		if(prev==null){
+			prev=0;
+		}
+		if(nex==null){
+			nex=0;
+		}
+		return cont,nex,prev;
 	}
 
-
 	$('#next').on('click', function () {
-		siguiente();
-		alert(cont);
-		alert(nex);
-		$('#prev').prop('hidden', false)
+		$('#prev').prop('hidden', false);
+		mostrar();
+		if(nex!=0){
+		$('#'+cont).prop('hidden',true);
+		$('#'+nex).prop('hidden',false);
+		}
 	});
 
 	$('#prev').on('click', function () {
-
+		mostrar();
+		if(prev!=0){
+			$('#'+cont).prop('hidden',true);
+			$('#'+prev).prop('hidden',false);
+			}
 	});
-
-
-
-
-
-	// $('#').on('click',function(event) {
-	// 	var input= $('#input').val();
-	// 	var obj={};
-	// 	obj.ubicacion=input;
-	// 	fetchpost(obj);
-	// 	//console.log(obj);
-	// });
-
 });
