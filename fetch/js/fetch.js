@@ -52,10 +52,10 @@ $(document).ready(function () {
 				var cont = "";
 				console.log(data);
 				alert(data.arbutus.length);
-				data.arbutus.forEach(function (dato) {
-					cont += '<p>' + dato.nombre + '</p>';
+				data.arbutus.forEach(function (index,dato) {
+					cont += '<tr><th scope="col">'+index+'</th><th scope="col">'+dato.nombre+'</th></tr>';
 				});
-				document.getElementById("cont1").innerHTML = cont;
+				document.getElementById("arbutus").innerHTML = cont;
 
 			}).catch(function (error) {
 				console.log(error);
@@ -73,10 +73,10 @@ $(document).ready(function () {
 				var cont = "";
 				console.log(data);
 				alert(data.comarosta.length);
-				data.comarosta.forEach(function (dato) {
-					cont += '<p>' + dato.nombre + '</p>';
+				data.comarosta.forEach(function (index,dato) {
+					cont += '<tr><th scope="col">'+index+'</th><th scope="col">'+dato.nombre+'</th></tr>';
 				});
-				document.getElementById("cont1").innerHTML = cont;
+				document.getElementById("comarosta").innerHTML = cont;
 
 			}).catch(function (error) {
 				console.log(error);
@@ -93,6 +93,7 @@ $(document).ready(function () {
 	var nex="";
 	var prev="";
 
+//CHECKBOXES
 	$('.habito2').on('click', function () {
 		var habito = $(this).prop('id');
 		if($(this).prop('checked')==false){
@@ -101,6 +102,7 @@ $(document).ready(function () {
 			obj.habito = habito;
 			fetchpost(obj);
 		}
+		//$('.habito2').prop('checked',false).not();
 	});
 
 	$('.flor').on('click', function () {
@@ -121,17 +123,15 @@ $(document).ready(function () {
 				nex = $(this).next().attr('id');
 			}
 		});
-		if(prev==null){
-			prev=0;
-		}
-		if(nex==null){
-			nex=0;
-		}
+		if(prev==null){prev=0;}
+		if(nex==null){nex=0;}
+
 		return cont,nex,prev;
 	}
 
 	$('#next').on('click', function () {
 		$('#prev').prop('hidden', false);
+		$('#reinicio').prop('hidden', false);
 		mostrar();
 		if(nex!=0){
 		$('#'+cont).prop('hidden',true);
@@ -145,5 +145,9 @@ $(document).ready(function () {
 			$('#'+cont).prop('hidden',true);
 			$('#'+prev).prop('hidden',false);
 			}
+		if(prev="habito"){
+			$('#reinicio').prop('hidden', true);
+			$('#prev').prop('hidden', true);
+		}
 	});
 });
