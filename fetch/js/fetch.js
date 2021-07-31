@@ -7,18 +7,15 @@ $(document).ready(function () {
 		}).then(res => res.json())
 			.then(function (data) {
 				var cont = "";
-				console.log(data);
-				alert(data.arbutus.length);
-				data.arbutus.forEach(function (dato) {
-					cont += '<p>' + dato.imagenes.imagen1 + '</p>';
+				//console.log(data);
+				data.arbutus.forEach(function (dato,index) {
+					cont += '<tr><th scope="col">'+(index+1)+'</th><th scope="col">'+dato.nombre+'</th></tr>';
 				});
-				document.getElementById("cont1").innerHTML = cont;
-
+				document.getElementById("arbutus").innerHTML = cont;
 			}).catch(function (error) {
 				console.log(error);
 			});
 	}
-
 
 	function fetch2() {
 		fetch('http://localhost:3000/comarosta', {
@@ -27,13 +24,11 @@ $(document).ready(function () {
 		}).then(res => res.json())
 			.then(function (data) {
 				var cont = "";
-				console.log(data);
-				alert(data.comarosta.length);
-				data.comarosta.forEach(function (dato) {
-					cont += '<p>' + dato.nombre + '</p>';
+				//console.log(data);
+				data.comarosta.forEach(function (dato,index) {
+					cont += '<tr><th scope="col">'+(index+1)+'</th><th scope="col">'+dato.nombre+'</th></tr>';
 				});
-				document.getElementById("cont2").innerHTML = cont;
-
+				document.getElementById("comaros").innerHTML = cont;
 			}).catch(function (error) {
 				console.log(error);
 			});
@@ -50,13 +45,11 @@ $(document).ready(function () {
 		}).then(res => res.json())
 			.then(function (data) {
 				var cont = "";
-				console.log(data);
-				alert(data.arbutus.length);
-				data.arbutus.forEach(function (index,dato) {
-					cont += '<tr><th scope="col">'+index+'</th><th scope="col">'+dato.nombre+'</th></tr>';
+				//console.log(data);
+				data.arbutus.forEach(function (dato,index) {
+					cont += '<tr><th scope="col">'+(index+1)+'</th><th scope="col">'+dato.nombre+'</th></tr>';
 				});
 				document.getElementById("arbutus").innerHTML = cont;
-
 			}).catch(function (error) {
 				console.log(error);
 			});
@@ -71,20 +64,18 @@ $(document).ready(function () {
 		}).then(res => res.json())
 			.then(function (data) {
 				var cont = "";
-				console.log(data);
-				alert(data.comarosta.length);
-				data.comarosta.forEach(function (index,dato) {
-					cont += '<tr><th scope="col">'+index+'</th><th scope="col">'+dato.nombre+'</th></tr>';
+				//console.log(data);
+				data.comarosta.forEach(function (dato,index) {
+					cont += '<tr><th scope="col">'+(index+1)+'</th><th scope="col">'+dato.nombre+'</th></tr>';
 				});
-				document.getElementById("comarosta").innerHTML = cont;
-
+				document.getElementById("comaros").innerHTML = cont;
 			}).catch(function (error) {
 				console.log(error);
 			});
 	}
 	//alert('hola');
-	//fetch1();
-	//fetch2();
+	fetch1();
+	fetch2();
 
 
 //VARIABLES
@@ -96,17 +87,18 @@ $(document).ready(function () {
 //CHECKBOXES
 	$('.habito2').on('click', function () {
 		var habito = $(this).prop('id');
+		$('.habito2').not(this).prop('checked',false);
 		if($(this).prop('checked')==false){
 			obj.habito = "";
 		}else{
 			obj.habito = habito;
 			fetchpost(obj);
 		}
-		//$('.habito2').prop('checked',false).not();
 	});
 
 	$('.flor').on('click', function () {
 		var flores = $(this).prop('id');
+		$('.flor').not(this).prop('checked',false);
 		if($(this).prop('checked')==false){
 			obj.flores = "";
 		}else{
@@ -115,6 +107,7 @@ $(document).ready(function () {
 		}
 	});
 
+//Botones de navegacion
 	function mostrar() {
 		$('.filtro').each(function (index, element) {
 			if ($(this).prop('hidden')==false) {
@@ -149,5 +142,12 @@ $(document).ready(function () {
 			$('#reinicio').prop('hidden', true);
 			$('#prev').prop('hidden', true);
 		}
+	});
+	
+	$('#reinicio').on('click', function () {
+		$('input[type=checkbox]').prop('checked',false);
+		delete obj;
+		fetch1();
+		fetch2();
 	});
 });
