@@ -329,7 +329,6 @@ db.arbutus.insert([
     }
 ]);
 db.arbutus.insert([
-
     {
         "nombre": "xalapensis.f.glandulosa",
         "imagenes": {
@@ -367,14 +366,12 @@ db.arbutus.insert([
 ]);
 
 db.arbutus.insert([
-
     {
         "nombre": "xalapensis.texana",
         "imagenes": {
             "imagen1": "img/Arbutus/A.xalapensis-var.texana/img1.jpg",
             "imagen2": "img/Arbutus/A.xalapensis-var.texana/img2.jpg",
             "imagen3": "img/Arbutus/A.xalapensis-var.texana/img3.jpg"
-
         },
         "habito": "arbol",
         "corteza_ramas": "exfoliante en láminas, la interior lisa, a veces guinda oscura, cerosa",

@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+	/////FUNCIONES FETCH
+
 	function fetch1() {
 		fetch('http://localhost:3000/arbutus', {
 			method: 'GET',
@@ -90,10 +92,51 @@ $(document).ready(function () {
 		$('.habito2').not(this).prop('checked',false);
 		if($(this).prop('checked')==false){
 			obj.habito = "";
+			fetch1();fetch2();
 		}else{
 			obj.habito = habito;
 			fetchpost(obj);
 		}
+		console.log(obj);
+	});
+
+	$('.hoja').on('click', function () {
+		var hoja = $(this).prop('id');
+		$('.hoja').not(this).prop('checked',false);
+		if($(this).prop('checked')==false){
+			obj.hojas = "";
+			//fetch1();fetch2();
+		}else{
+			obj.hojas = hoja;
+			fetchpost(obj);
+		}
+		console.log(obj);
+	});
+
+	$('.has').on('click', function () {
+		var has = $(this).prop('id');
+		$('.has').not(this).prop('checked',false);
+		if($(this).prop('checked')==false){
+			obj.haz = "";
+			//fetch1();fetch2();
+		}else{
+			obj.haz = has;
+			fetchpost(obj);
+		}
+		console.log(obj);
+	});
+
+	$('.env').on('click', function () {
+		var env = $(this).prop('id');
+		$('.env').not(this).prop('checked',false);
+		if($(this).prop('checked')==false){
+			obj.enves = "";
+			//fetch1();fetch2();
+		}else{
+			obj.enves = env;
+			fetchpost(obj);
+		}
+		console.log(obj);
 	});
 
 	$('.flor').on('click', function () {
@@ -101,6 +144,7 @@ $(document).ready(function () {
 		$('.flor').not(this).prop('checked',false);
 		if($(this).prop('checked')==false){
 			obj.flores = "";
+			//fetch1();fetch2();
 		}else{
 			obj.flores = flores;
 			fetchpost(obj);
@@ -138,7 +182,7 @@ $(document).ready(function () {
 			$('#'+cont).prop('hidden',true);
 			$('#'+prev).prop('hidden',false);
 			}
-		if(prev="habito"){
+		if(prev=="habito"){
 			$('#reinicio').prop('hidden', true);
 			$('#prev').prop('hidden', true);
 		}
@@ -147,6 +191,10 @@ $(document).ready(function () {
 	$('#reinicio').on('click', function () {
 		$('input[type=checkbox]').prop('checked',false);
 		delete obj;
+		$('.filtro').prop('hidden',true);
+		$('#habito').prop('hidden',false);
+		$('#prev').prop('hidden', true);
+		$('#reinicio').prop('hidden', true);
 		fetch1();
 		fetch2();
 	});
