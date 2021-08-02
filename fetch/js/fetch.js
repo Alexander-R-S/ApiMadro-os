@@ -72,7 +72,7 @@ $(document).ready(function () {
 				});
 				document.getElementById("comaros").innerHTML = cont;
 			}).catch(function (error) {
-				console.log(error);
+				console.log(error.message);
 			});
 	}
 	//alert('hola');
@@ -85,8 +85,11 @@ $(document).ready(function () {
 	var cont="";
 	var nex="";
 	var prev="";
-
+	var cont1="";
+	var cont2="";
+	
 //CHECKBOXES
+
 	$('.habito2').on('click', function () {
 		var habito = $(this).prop('id');
 		$('.habito2').not(this).prop('checked',false);
@@ -105,6 +108,8 @@ $(document).ready(function () {
 		$('.hoja').not(this).prop('checked',false);
 		if($(this).prop('checked')==false){
 			obj.hojas = "";
+			$('#arbutus').html(cont1);
+			$('#comaros').html(cont2);
 			//fetch1();fetch2();
 		}else{
 			obj.hojas = hoja;
@@ -118,6 +123,8 @@ $(document).ready(function () {
 		$('.has').not(this).prop('checked',false);
 		if($(this).prop('checked')==false){
 			obj.haz = "";
+			$('#arbutus').html(cont1);
+			$('#comaros').html(cont2);
 			//fetch1();fetch2();
 		}else{
 			obj.haz = has;
@@ -131,6 +138,8 @@ $(document).ready(function () {
 		$('.env').not(this).prop('checked',false);
 		if($(this).prop('checked')==false){
 			obj.enves = "";
+			$('#arbutus').html(cont1);
+			$('#comaros').html(cont2);
 			//fetch1();fetch2();
 		}else{
 			obj.enves = env;
@@ -144,6 +153,8 @@ $(document).ready(function () {
 		$('.flor').not(this).prop('checked',false);
 		if($(this).prop('checked')==false){
 			obj.flores = "";
+			$('#arbutus').html(cont1);
+			$('#comaros').html(cont2);
 			//fetch1();fetch2();
 		}else{
 			obj.flores = flores;
@@ -167,6 +178,8 @@ $(document).ready(function () {
 	}
 
 	$('#next').on('click', function () {
+		cont1=$('#arbutus').html();
+		cont2=$('#comaros').html();
 		$('#prev').prop('hidden', false);
 		$('#reinicio').prop('hidden', false);
 		mostrar();
@@ -190,7 +203,11 @@ $(document).ready(function () {
 	
 	$('#reinicio').on('click', function () {
 		$('input[type=checkbox]').prop('checked',false);
-		delete obj;
+		delete obj.habito;
+		delete obj.haz;
+		delete obj.enves;
+		delete obj.flores;
+		delete obj.hojas;
 		$('.filtro').prop('hidden',true);
 		$('#habito').prop('hidden',false);
 		$('#prev').prop('hidden', true);
