@@ -39,6 +39,13 @@
 		}
 	</style>
 
+	<div class="container pt-5">
+		<div class="col-12">
+			<h2 class="text-center ">Selecciona las caracteristicas que conoces</h2>
+			<h5 class="text-center">En caso de no conocer alguna has click en siguiente</h5>
+		</div>
+	</div>
+
 	<div class="container pt-5 w-75 bg-light">
 
 		<!-- ////// HABITO -->
@@ -62,7 +69,7 @@
 			</div>
 		</div>
 
-		
+
 		<!-- ////// UBICACION -->
 		<div class="row filtro" id="ubicacion" hidden>
 			<div class="col-12">
@@ -71,7 +78,8 @@
 			<div class="col-12">
 				<div class="container">
 					<div class="row">
-						<div class="col-3"><input type="checkbox" name="" id="Aguascalientes" class="input-hidden ubi" />
+						<div class="col-3"><input type="checkbox" name="" id="Aguascalientes"
+								class="input-hidden ubi" />
 							<label for="Aguascalientes">
 								<img src="img/arbol.jpg" alt="" />
 								<h5>Aguascalientes</h5>
@@ -446,20 +454,20 @@
 					</div>
 
 					<div class="row">
-							<div class="col-4">
-								<input type="checkbox" name="" id="glandula" class="input-hidden env" />
-								<label for="glandula">
-									<img src="img/arbol.jpg" alt="" />
-									<h5>Pelos Glandulares</h5>
-								</label>
-							</div>
-							<div class="col-4">
-								<input type="checkbox" name="" id="pubescent" class="input-hidden env" />
-								<label for="pubescent">
-									<img src="img/arbol.jpg" alt="" />
-									<h5>Pubescente</h5>
-								</label>
-							</div>
+						<div class="col-4">
+							<input type="checkbox" name="" id="glandula" class="input-hidden env" />
+							<label for="glandula">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Pelos Glandulares</h5>
+							</label>
+						</div>
+						<div class="col-4">
+							<input type="checkbox" name="" id="pubescent" class="input-hidden env" />
+							<label for="pubescent">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Pubescente</h5>
+							</label>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -551,6 +559,7 @@
 						<tr>
 							<th scope="col">#</th>
 							<th scope="col">Nombre</th>
+							<th scope="col"></th>
 						</tr>
 					</thead>
 					<tbody id="arbutus">
@@ -564,6 +573,7 @@
 						<tr>
 							<th scope="col">#</th>
 							<th scope="col">Nombre</th>
+							<th scope="col"></th>
 						</tr>
 					</thead>
 					<tbody id="comaros">
@@ -572,6 +582,140 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- //MODAL Arbutus -->
+
+	<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button> -->
+
+	<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+		aria-hidden="true" id="ver1">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 id="nom">Nombre</h1>
+				</div>
+				<div class="modal-body">
+					<div class="container pl-4 pr-4">
+						<div class="row">
+							<div class="col-12"><span>
+									<h5>Habito:</h5>
+									<p id="hab">sfsfsf</p>
+								</span></div>
+							<div class="col-12"><span>
+									<h5>Corteza Ramas:</h5>
+									<p id="cr">sfsfsf</p>
+								</span></div>
+							<div class="col-12"><span>
+									<h5>Corteza Ramillas:</h5>
+									<p id="crs">sfsfsf</p>
+								</span></div>
+							<div class="col-12"><span>
+									<h5>Peciolos:</h5>
+									<p id="pec">sfsfsf</p>
+								</span></div>
+						</div>
+						<div class="row">
+							<div class="col-12"><span>
+									<h5>Hojas:</h5>
+									<p id="hoj">sfsfsf</p>
+								</span></div>
+							<div class="col-12"><span>
+									<h5>Haz:</h5>
+									<p id="ha">sfsfsf</p>
+								</span></div>
+							<div class="col-12"><span>
+									<h5>Enves:</h5>
+									<p id="en">sfsfsf</p>
+								</span></div>
+							<div class="col-12"><span>
+									<h5>Flores:</h5>
+									<p id="flo">sfsfsf</p>
+								</span></div>
+						</div>
+						<div class="row">
+							<div class="col-12"><span>
+									<h5>Ubicacion:</h5>
+									<p id="ub">sfsfsf</p>
+								</span></div>
+						</div>
+						<div class="row">
+							<div class="col-4"><img src="img/arbol.jpg" style="width: 8rem;" alt=""></div>
+							<div class="col-4"><img src="img/arbol.jpg" style="width: 8rem;" alt=""></div>
+							<div class="col-4"><img src="img/arbol.jpg" style="width: 8rem;" alt=""></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- //MODAL COMAROS -->
+
+
+	<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+		aria-hidden="true" id="ver2">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 id="nom2">Nombre</h1>
+				</div>
+				<div class="modal-body">
+					<div class="container pl-4 pr-4">
+						<div class="row">
+							<div class="col-12"><span>
+									<h5>Habito:</h5>
+									<p id="hab2">sfsfsf</p>
+								</span></div>
+							<div class="col-12"><span>
+									<h5>Peciolos Ramillas:</h5>
+									<p id="pr">sfsfsf</p>
+								</span></div>
+							<div class="col-12"><span>
+									<h5>Hojas:</h5>
+									<p id="ho">sfsfsf</p>
+								</span></div>
+						</div>
+						<div class="row">
+							<div class="col-12"><span>
+									<h5>Margen:</h5>
+									<p id="mar">sfsfsf</p>
+								</span></div>
+							<div class="col-12"><span>
+									<h5>Haz:</h5>
+									<p id="h">sfsfsf</p>
+								</span></div>
+							<div class="col-12"><span>
+									<h5>Enves:</h5>
+									<p id="env2">sfsfsf</p>
+								</span></div>
+							<div class="col-12"><span>
+									<h5>Inflorescencia:</h5>
+									<p id="inf">sfsfsf</p>
+								</span></div>
+							<div class="col-12"><span>
+									<h5>Flores:</h5>
+									<p id="fl">sfsfsf</p>
+								</span></div>
+						</div>
+						<div class="row">
+							<div class="col-12"><span>
+									<h5>Ubicacion:</h5>
+									<p id="ubi">sfsfsf</p>
+								</span></div>
+						</div>
+						<div class="row">
+							<div class="col-4"><img src="img/arbol.jpg" style="width: 8rem;" alt=""></div>
+							<div class="col-4"><img src="img/arbol.jpg" style="width: 8rem;" alt=""></div>
+							<div class="col-4"><img src="img/arbol.jpg" style="width: 8rem;" alt=""></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->

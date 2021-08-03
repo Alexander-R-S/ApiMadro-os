@@ -1,43 +1,5 @@
 $(document).ready(function () {
 
-	/////FUNCIONES FETCH
-
-	function fetch1() {
-		fetch('http://localhost:3000/arbutus', {
-			method: 'GET',
-			//body: JSON.stringify(data)
-		}).then(res => res.json())
-			.then(function (data) {
-				var cont = "";
-				//console.log(data);
-				data.arbutus.forEach(function (dato, index) {
-					cont += '<tr><th scope="col">' + (index + 1) + '</th><th scope="col">' + dato.nombre + '</th></tr>';
-				});
-				$('#tabla1').prop('hidden', false);
-				document.getElementById("arbutus").innerHTML = cont;
-			}).catch(function (error) {
-				console.log(error);
-			});
-	}
-
-	function fetch2() {
-		fetch('http://localhost:3000/comarosta', {
-			method: 'GET',
-			//body: JSON.stringify(data)
-		}).then(res => res.json())
-			.then(function (data) {
-				var cont = "";
-				//console.log(data);
-				data.comarosta.forEach(function (dato, index) {
-					cont += '<tr><th scope="col">' + (index + 1) + '</th><th scope="col">' + dato.nombre + '</th></tr>';
-				});
-				$('#tabla1').prop('hidden', false);
-				document.getElementById("comaros").innerHTML = cont;
-			}).catch(function (error) {
-				console.log(error);
-			});
-	}
-
 	//Funcion para ocultar tabla en caso de no resultados.
 	function validar(err1, err2) {
 		if (err1 == 1) {
@@ -61,6 +23,50 @@ $(document).ready(function () {
 		$('#tabla1').prop('hidden', false);
 	}
 
+	/////FUNCIONES FETCH
+
+	function fetch1() {
+		fetch('http://localhost:3000/arbutus', {
+			method: 'GET',
+			//body: JSON.stringify(data)
+		}).then(res => res.json())
+			.then(function (data) {
+				var cont = "";
+				//console.log(data);
+				data.arbutus.forEach(function (dato, index) {
+					cont += '<tr><td scope="col">' + (index + 1) + '</td><td scope="col">'
+						+ dato.nombre + '</td><td scope="col">' +
+						'<button type="button" id="' + dato.nombre + '" class="btn btn-primary vera">Ver mas</button>'
+						+ '</td></tr>';
+				});
+				$('#tabla1').prop('hidden', false);
+				document.getElementById("arbutus").innerHTML = cont;
+			}).catch(function (error) {
+				console.log(error);
+			});
+	}
+
+	function fetch2() {
+		fetch('http://localhost:3000/comarosta', {
+			method: 'GET',
+			//body: JSON.stringify(data)
+		}).then(res => res.json())
+			.then(function (data) {
+				var cont = "";
+				//console.log(data);
+				data.comarosta.forEach(function (dato, index) {
+					cont += '<tr><td scope="col">' + (index + 1) + '</td><td scope="col">'
+						+ dato.nombre + '</td><td scope="col">' +
+						'<button type="button" id="' + dato.nombre + '"class="btn btn-primary verc">Ver mas</button>'
+						+ '</td></tr>';
+				});
+				$('#tabla1').prop('hidden', false);
+				document.getElementById("comaros").innerHTML = cont;
+			}).catch(function (error) {
+				console.log(error);
+			});
+	}
+
 	function fetchpost(dato) {
 		var err1 = 0;
 		var err2 = 0;
@@ -76,7 +82,10 @@ $(document).ready(function () {
 				var cont = "";
 				//console.log(data);
 				data.arbutus.forEach(function (dato, index) {
-					cont += '<tr><th scope="col">' + (index + 1) + '</th><th scope="col">' + dato.nombre + '</th></tr>';
+					cont += '<tr><td scope="col">' + (index + 1) + '</td><td scope="col">'
+						+ dato.nombre + '</td><td scope="col">' +
+						'<button type="button" id="' + dato.nombre + '" class="btn btn-primary vera">Ver mas</button>'
+						+ '</td></tr>';
 				});
 				$('#tabla1').prop('hidden', false);
 				document.getElementById("arbutus").innerHTML = cont;
@@ -98,7 +107,10 @@ $(document).ready(function () {
 				var cont = "";
 				//console.log(data);
 				data.comarosta.forEach(function (dato, index) {
-					cont += '<tr><th scope="col">' + (index + 1) + '</th><th scope="col">' + dato.nombre + '</th></tr>';
+					cont += '<tr><td scope="col">' + (index + 1) + '</td><td scope="col">'
+						+ dato.nombre + '</td><td scope="col">' +
+						'<button type="button" id="' + dato.nombre + '"class="btn btn-primary verc">Ver mas</button>'
+						+ '</td></tr>';
 				});
 				$('#tabla2').prop('hidden', false);
 				document.getElementById("comaros").innerHTML = cont;
@@ -108,10 +120,53 @@ $(document).ready(function () {
 				//console.log(error);
 			});
 	}
-	//alert('hola');
+
+	function fetchfinala(nombre) {
+		fetch('http://localhost:3000/arbutus/nombre/' + nombre, {
+			method: 'GET',
+		}).then(res => res.json())
+			.then(function (data) {
+				//console.log(data);
+				document.getElementById("nom").innerHTML = data.arbutus[0].nombre;
+				document.getElementById("hab").innerHTML = data.arbutus[0].habito;
+				document.getElementById("cr").innerHTML = data.arbutus[0].corteza_ramas;
+				document.getElementById("crs").innerHTML = data.arbutus[0].corteza_ramillas;
+				document.getElementById("pec").innerHTML = data.arbutus[0].peciolos;
+				document.getElementById("hoj").innerHTML = data.arbutus[0].nombre;
+				document.getElementById("ha").innerHTML = data.arbutus[0].haz;
+				document.getElementById("en").innerHTML = data.arbutus[0].enves;
+				document.getElementById("flo").innerHTML = data.arbutus[0].flores;
+				document.getElementById("ub").innerHTML = data.arbutus[0].ubicacion;
+			}).catch(function (error) {
+				console.log(error);
+			});
+	}
+
+	function fetchfinalc(nombre) {
+		fetch('http://localhost:3000/comarosta/nombre/' + nombre, {
+			method: 'GET',
+		}).then(res => res.json())
+			.then(function (data) {
+				//console.log(data);
+				document.getElementById("nom2").innerHTML = data.comarosta[0].nombre;
+				document.getElementById("hab2").innerHTML = data.comarosta[0].habito;
+				document.getElementById("pr").innerHTML = data.comarosta[0].peciolos_ramillas;
+				document.getElementById("ho").innerHTML = data.comarosta[0].hojas;
+				document.getElementById("mar").innerHTML = data.comarosta[0].margen;
+				document.getElementById("h").innerHTML = data.comarosta[0].haz;
+				document.getElementById("env2").innerHTML = data.comarosta[0].enves;
+				document.getElementById("inf").innerHTML = data.comarosta[0].inflorescencia;
+				document.getElementById("fl").innerHTML = data.comarosta[0].flores;
+				document.getElementById("ubi").innerHTML = data.comarosta[0].ubicacion;
+			}).catch(function (error) {
+				console.log(error);
+			});
+
+	}
+
+	//Ejecucion inicial para llenado de tablas;
 	fetch1();
 	fetch2();
-
 
 	//VARIABLES
 	var obj = {};
@@ -143,10 +198,10 @@ $(document).ready(function () {
 		mostrartablas();
 		if ($(this).prop('checked') == false) {
 			obj.hojas = "";
-			if($('#tabla1').prop('hidden', true)){
+			if ($('#tabla1').prop('hidden')==true) {
 				$('#arbutus').html(cont1);
 			}
-			if($('#tabla2').prop('hidden', true)){
+			if ($('#tabla2').prop('hidden')==true) {
 				$('#comaros').html(cont2);
 			}
 			//fetch1();fetch2();
@@ -163,10 +218,10 @@ $(document).ready(function () {
 		mostrartablas();
 		if ($(this).prop('checked') == false) {
 			obj.haz = "";
-			if($('#tabla1').prop('hidden', true)){
+			if ($('#tabla1').prop('hidden')==true) {
 				$('#arbutus').html(cont1);
 			}
-			if($('#tabla2').prop('hidden', true)){
+			if ($('#tabla2').prop('hidden')==true) {
 				$('#comaros').html(cont2);
 			}
 			//fetch1();fetch2();
@@ -183,10 +238,10 @@ $(document).ready(function () {
 		mostrartablas();
 		if ($(this).prop('checked') == false) {
 			obj.enves = "";
-			if($('#tabla1').prop('hidden', true)){
+			if ($('#tabla1').prop('hidden')==true) {
 				$('#arbutus').html(cont1);
 			}
-			if($('#tabla2').prop('hidden', true)){
+			if ($('#tabla2').prop('hidden')==true) {
 				$('#comaros').html(cont2);
 			}
 			//fetch1();fetch2();
@@ -203,10 +258,10 @@ $(document).ready(function () {
 		mostrartablas();
 		if ($(this).prop('checked') == false) {
 			obj.ubicacion = "";
-			if($('#tabla1').prop('hidden', true)){
+			if ($('#tabla1').prop('hidden')==true) {
 				$('#arbutus').html(cont1);
 			}
-			if($('#tabla2').prop('hidden', true)){
+			if ($('#tabla2').prop('hidden')==true) {
 				$('#comaros').html(cont2);
 			}
 			//fetch1();fetch2();
@@ -223,10 +278,10 @@ $(document).ready(function () {
 		mostrartablas();
 		if ($(this).prop('checked') == false) {
 			obj.flores = "";
-			if($('#tabla1').prop('hidden', true)){
+			if ($('#tabla1').prop('hidden')==true) {
 				$('#arbutus').html(cont1);
 			}
-			if($('#tabla2').prop('hidden', true)){
+			if ($('#tabla2').prop('hidden')==true) {
 				$('#comaros').html(cont2);
 			}
 			//fetch1();fetch2();
@@ -292,4 +347,19 @@ $(document).ready(function () {
 		fetch1();
 		fetch2();
 	});
+
+	///BOTON VER MAS
+	$('body').on('click', '.vera', function () {
+		var id = $(this).prop('id');
+		fetchfinala(id);
+		$('#ver1').modal('show');
+	});
+
+	$('body').on('click', '.verc', function () {
+		var id = $(this).prop('id');
+		fetchfinalc(id);
+		$('#ver2').modal('show');
+	});
+
 });
+

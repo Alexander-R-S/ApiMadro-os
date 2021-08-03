@@ -13,7 +13,7 @@ function index(req,res){
 function buscar(req,res,next){
     let consulta={};
     //consulta[req.params.key] = { '$regex': req.params.value, '$options': 'i' } && { '$regex': req.params.value, '$options': 'i' };
-    consulta[req.params.key] = { '$regex': req.params.value, '$options': 'i' };
+    consulta[req.params.key] = req.params.value;
     //consulta[req.params.key]=req.params.value;
     ModeloComarosta.find(consulta).then(comarosta=>{
         if(!comarosta.length) return next();
