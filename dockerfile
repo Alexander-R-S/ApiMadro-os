@@ -1,10 +1,7 @@
-FROM node:carbon-alpine
-RUN mkdir /technogenesis_madro
-COPY package.json /technogenesis_madro
-COPY server.js /technogenesis_madro
-COPY app /technogenesis_madro
-COPY db /technogenesis_madro
-WORKDIR /technogenesis_madro
+FROM node:14.16.0
+WORKDIR /apimadro
+COPY package*.json /.
 RUN npm install
+COPY . .
 EXPOSE 3000
-CMD node server.js
+CMD ["npm","start"]
