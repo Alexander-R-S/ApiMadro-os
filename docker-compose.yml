@@ -13,7 +13,11 @@ services:
     mongo:
         container_name: madronosdb
         image: mongo
+        volumes:
+            - ./mongo-volume:/data/db
         ports: 
              - "27017:27017"
+        command:
+            - mongorestore -d madroños /db/dbackup/dump/madroños
         logging: 
             driver: none
