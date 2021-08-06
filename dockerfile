@@ -1,6 +1,5 @@
-FROM node:14.16.0
+FROM node:carbon-alpine
 WORKDIR /apimadro
-RUN mkdir mongo-volume
 COPY package*.json /.
 RUN npm install
 COPY . .
