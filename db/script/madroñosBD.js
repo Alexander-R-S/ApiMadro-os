@@ -396,6 +396,9 @@ db.arbutus.insert([
 ]);
 
 
+
+
+
 ///// COLLECCION COMAROSTAPHYSLIS
 
 db.comarostaphylis.insert([
@@ -853,5 +856,5 @@ db.comarostaphylis.insert([
     }
 ]);
 
-db.arbutus.find({"habito":{ '$regex':'arbol', '$options': 'i' },"ubicacion":{ '$regex':'Jalisco', '$options': 'i' }}) 
+
 

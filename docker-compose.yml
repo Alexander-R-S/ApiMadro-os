@@ -1,0 +1,23 @@
+version: '3'
+services:
+    apirest:
+        container_name: apimadros
+        restart: always
+        build: .
+        ports: 
+            - "8080:3000"
+        links: 
+            - mongo
+        volumes: 
+            - .:/apimadro
+
+    mongo:
+        container_name: madronosdb
+        image: mongo
+        restart: always
+        volumes: 
+            - .mongodata:/data/db
+        ports: 
+             - "27018:27017"
+        logging: 
+            driver: none
