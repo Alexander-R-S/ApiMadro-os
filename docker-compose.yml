@@ -12,11 +12,11 @@ services:
             - .:/apimadro
     mongo:
         container_name: madronosdb
-        image: mongo:3.0-wheezy
+        image: mongo:3.2.21-jessie
         restart: always
         volumes: 
-            - /mongodb:/data/db
+            - C:/apimadrosdb:/data/db
         ports: 
-             - "27018:27017"
+             - "27017:27017"
         logging: 
             driver: none
