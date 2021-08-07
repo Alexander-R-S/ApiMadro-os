@@ -10,13 +10,12 @@ services:
             - mongo
         volumes: 
             - .:/apimadro
-
     mongo:
         container_name: madronosdb
-        image: mongo
+        image: mongo:3.0-wheezy
         restart: always
         volumes: 
-            - .mongodata:/data/db
+            - /mongodb:/data/db
         ports: 
              - "27018:27017"
         logging: 
