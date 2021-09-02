@@ -10,17 +10,32 @@ function index(req, res) {
 }
 
 function inserta(req, res) {
+    let cons = {};
+    let imgs = {};
+    cons.nombre = req.body.nombre;
+    cons.habito = req.body.habito;
+    cons.corteza_ramas = req.body.cortezar;
+    cons.corteza_ramillas = req.body.cortezars;
+    cons.peciolos = req.body.peciolos;
+    cons.hojas = req.body.hojas;
+    cons.haz = req.body.haz;
+    cons.enves = req.body.enves;
+    cons.flores = req.body.flores;
+    cons.ubicacion = req.body.ubicacion.split(",");
+    imgs.imagen1 = req.body.img1;
+    imgs.imagen2 = req.body.img2;
+    imgs.imagen3 = req.body.img3;
+    cons.imagenes = imgs;
 
-    console.log(req.body);
-    // new ModeloDulces(req.body).save()
-    //     .then(dulces => res.status(200).send({ dulces }))
-    //     .catch(error => res.status(500).send({ error }));
+    ModeloArbutus(cons).save()
+        .then(arbu => res.status(200).send({ message: 'Registro correcto' }))
+        .catch(error => res.status(500).send({ error }));
 }
+
 
 function buscar(req, res, next) {
     let consulta = {};
     consulta[req.params.key] = req.params.value;
-    // consulta[req.params.key]=req.params.value;
     ModeloArbutus.find(consulta).then(arbutus => {
         if (!arbutus.length) return next();
         req.body.arbutus = arbutus;
@@ -122,10 +137,19 @@ function mostrar(req, res) {
     return res.status(200).send({ arbutus, count });
 }
 
+function eliminar(req, res) {
+    if (req.body.error) return res.status(500).send({ error });
+    if (!req.body.arbutus) return res.status(404).send({ message: 'No se puede eliminar el registro' });
+    req.body.arbutus[0].remove().then(arBaja => {
+        res.status(200).send({ message: 'El registro se elimino correctamente', arBaja });
+    }).catch(error => res.status(500).send({ error }));
+}
+
 module.exports = {
     index,
     buscar,
     buscar2,
     mostrar,
-    inserta
+    inserta,
+    eliminar
 }
