@@ -32,6 +32,34 @@ function inserta(req, res) {
         .catch(error => res.status(500).send({ error }));
 }
 
+function actualizar(req,res){
+    if(req.body.error) return res.status(500).send({error});
+    if(!req.body.arbutus) return res.status(404).send({message:'No se puede actualizar'});
+
+    let cons = {};
+    let imgs = {};
+    cons.nombre = req.body.nombre;
+    cons.habito = req.body.habito;
+    cons.corteza_ramas = req.body.cortezar2;
+    cons.corteza_ramillas = req.body.cortezars2;
+    cons.peciolos = req.body.peciolos;
+    cons.hojas = req.body.hojas;
+    cons.haz = req.body.haz;
+    cons.enves = req.body.enves;
+    cons.flores = req.body.flores;
+    cons.ubicacion = req.body.ubicacion.split(",");
+    imgs.imagen1 = req.body.img1;
+    imgs.imagen2 = req.body.img2;
+    imgs.imagen3 = req.body.img3;
+    cons.imagenes = imgs;
+
+    let arbuObj= req.body.arbutus[0];
+    arbuObj=Object.assign(arbuObj,cons);
+    arbuObj.save().then(arbuAlta=>{
+    res.status(200).send({message:'El registro se actualizo correctamente', arbuAlta});
+    }).catch(error=>res.status(500).send({error}));
+}
+
 
 function buscar(req, res, next) {
     let consulta = {};
@@ -151,5 +179,6 @@ module.exports = {
     buscar2,
     mostrar,
     inserta,
-    eliminar
+    eliminar,
+    actualizar
 }

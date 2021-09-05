@@ -20,17 +20,6 @@
                 <h1 class="display-4 text-info text-center">Arbutus</h1>
             </div>
         </div>
-        <div class="row">
-            <div class="col-4">
-                <img src="" alt=""  id="foto1" width="300px">
-            </div>
-            <div class="col-4">
-                <img src="" alt=""  id="foto2" width="300px">
-            </div>
-            <div class="col-4">
-                <img src="" alt=""  id="foto3"width="300px">
-            </div>
-        </div>
         <div class="row pt-5">
             <div class="col-12">
                 <span class="d-inline-flex">
@@ -94,14 +83,14 @@
                                                     id="habito" placeholder="Habito">
                                             </div>
                                             <div class="col-4">
-                                                <input type="text" class="form-control form-control-lg" name="corteza_ramas"
+                                                <input type="text" class="form-control form-control-lg" name="cortezar"
                                                     id="cortezar" placeholder="Corteza Ramas">
                                             </div>
                                         </div>
 
                                         <div class="form-row pt-3">
                                             <div class="col-4">
-                                                <input type="text" class="form-control form-control-lg" name="corteza_ramillas"
+                                                <input type="text" class="form-control form-control-lg" name="cortezars"
                                                     id="cortezars" placeholder="Corteza
                                                 Ramillas">
                                             </div>
@@ -130,19 +119,20 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-row pt-4">
-                                            <div class="col-3"></div>
-                                            <div class="col-6">
-                                                    <div class="custom-file">
-                                                        <input type="file" class="custom-file-input form-control-lg" name="files" id="img" lang="es" multiple>
-                                                        <label class="custom-file-label form-control-lg" for="img">Seleccione max 3 Imagenes:</label>
-                                                      </div>
-                                            </div>
-                                            <div class="col-3"></div>
-                                        </div>
                                     </form>
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="form-row pt-4">
+                            <div class="col-3"></div>
+                            <div class="col-6">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input form-control-lg" name="files" id="img" lang="es" multiple>
+                                        <label class="custom-file-label form-control-lg" for="img">Seleccione max 3 Imagenes:</label>
+                                      </div>
+                            </div>
+                            <div class="col-3"></div>
                         </div>
                         
                         <div class="row pt-4">
@@ -198,6 +188,150 @@
             </div>
         </div>
     </div>
+
+
+     <!-- //MODAL Actualizar Arbutus -->
+
+     <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel"
+     aria-hidden="true" id="edit">
+     <div class="modal-dialog modal-xl">
+         <div class="modal-content">
+             <div class="modal-header">
+                 <h2 class="offset-4">Actualiza Arbutus</h2>
+             </div>
+             <div class="modal-body">
+                 <div class="container pl-4 pr-4">
+                     <div class="row">
+                         <div class="col-12">
+                             <div class="container">
+                                 <form id="formarbu2" enctype="multipart/form-data">
+                                     <div class="form-row pt-">
+                                         <div class="col-4">
+                                             <input type="text" id="id" hidden>
+                                             <input type="text" class="form-control form-control-lg" name="nombre"
+                                                 id="nom" placeholder="Nombre">
+                                         </div>
+                                         <div class="col-4">
+                                             <input type="text" class="form-control form-control-lg" name="habito"
+                                                 id="hab" placeholder="Habito">
+                                         </div>
+                                         <div class="col-4">
+                                             <input type="text" class="form-control form-control-lg" name="cortezar2"
+                                                 id="cor1" placeholder="Corteza Ramas">
+                                         </div>
+                                     </div>
+
+                                     <div class="form-row pt-3">
+                                         <div class="col-4">
+                                             <input type="text" class="form-control form-control-lg" name="cortezars2"
+                                                 id="cor2" placeholder="Corteza
+                                             Ramillas">
+                                         </div>
+                                         <div class="col-4">
+                                             <input type="text" class="form-control form-control-lg" name="peciolos"
+                                                 id="pec" placeholder="Peciolos">
+                                         </div>
+                                         <div class="col-4">
+                                             <input type="text" class="form-control form-control-lg" name="hojas"
+                                                 id="hoj" placeholder="Hojas">
+                                         </div>
+                                     </div>
+
+                                     <div class="form-row pt-3">
+                                         <div class="col-4">
+                                             <input type="text" class="form-control form-control-lg" name="haz"
+                                                 id="haz2" placeholder="Haz">
+                                         </div>
+                                         <div class="col-4">
+                                             <input type="text" class="form-control form-control-lg" name="enves"
+                                                 id="env" placeholder="Enves">
+                                         </div>
+                                         <div class="col-4">
+                                             <input type="text" class="form-control form-control-lg" name="flores"
+                                                 id="flo" placeholder="Flores">
+                                         </div>
+                                     </div>
+                                 </form>
+                             </div>
+                         </div>
+                     </div>
+
+                     <div class="row pt-4">
+                         <div class="col-4 text-center">
+                            <img src="" alt="" id="foto1" class="pb-1" style="width: 200px;height:200px">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input form-control-lg" name="file1" id="img1" lang="es">
+                                <label class="custom-file-label form-control-lg" for="img">Image1:</label>
+                              </div>
+                         </div>
+                         <div class="col-4 text-center">
+                            <img src="" alt="" id="foto2" class="pb-1" style="width: 200px;height:200px">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input form-control-lg" name="file2" id="img2" lang="es">
+                                <label class="custom-file-label form-control-lg" for="img">Imagen2:</label>
+                              </div>
+                        </div>
+                        <div class="col-4 text-center">
+                            <img src="" alt="" id="foto3" class="pb-1" style="width: 200px;height:200px">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input form-control-lg" name="file3" id="img3" lang="es">
+                                <label class="custom-file-label form-control-lg" for="img">Imagen3:</label>
+                              </div>
+                        </div>
+                     </div>
+                     
+                     <div class="row pt-4">
+                         <div class="col-3 text-right">
+                             <label for="ubi" class="col-6 col-form-label-lg">Ubicacion</label>
+                         </div>
+                         <div class="col-7">
+                             <select class="form-control form-control-lg" name="ubicacion"
+                                 id="ubi" multiple="multiple">
+                                 <option value="Aguascalientes" selected>Aguascalientes</option>
+                                 <option value="Baja California">Baja California</option>
+                                 <option value="Baja California Sur">Baja California Sur</option>
+                                 <option value="Campeche">Campeche</option>
+                                 <option value="Chiapas">Chiapas</option>
+                                 <option value="Chihuahua">Chihuahua</option>
+                                 <option value="Ciudad de México">Cd.México</option>
+                                 <option value="Coahuila">Coahuila</option>
+                                 <option value="Colima">Colima</option>
+                                 <option value="Durango">Durango</option>
+                                 <option value="Estado de México">Edo.México</option>
+                                 <option value="Guanajuato">Guanajuato</option>
+                                 <option value="Guerrero">Guerrero</option>
+                                 <option value="Hidalgo">Hidalgo</option>
+                                 <option value="Jalisco">Jalisco</option>
+                                 <option value="Michoacán">Michoacán</option>
+                                 <option value="Morelos">Morelos</option>
+                                 <option value="Nayarit">Nayarit</option>
+                                 <option value="Nuevo León">Nuevo León</option>
+                                 <option value="Oaxaca">Oaxaca</option>
+                                 <option value="Puebla">Puebla</option>
+                                 <option value="Querétaro">Querétaro</option>
+                                 <option value="Quintana Roo">Quintana Roo</option>
+                                 <option value="San Luis Potosí">San Luis Potosí</option>
+                                 <option value="Sinaloa">Sinaloa</option>
+                                 <option value="Sonora">Sonora</option>
+                                 <option value="Tabasco">Tabasco</option>
+                                 <option value="Tamaulipas">Tamaulipas</option>
+                                 <option value="Tlaxcala">Tlaxcala</option>
+                                 <option value="Veracruz">Veracruz</option>
+                                 <option value="Yucatán">Yucatán</option>
+                                 <option value="Zacatecas">Zacatecas</option>
+                             </select>
+                         </div>
+                     </div>
+
+                 </div>
+             </div>
+             <div class="modal-footer text-center">
+                 <button type="button" class="btn btn-lg btn-warning" id="editar">Guardar Cambios</button>
+             </div>
+         </div>
+     </div>
+ </div>
+
 
 
 
