@@ -19,8 +19,8 @@ const ControladorArbutus=require('../controlador/controladorArbutus');
 Router.get('/',ControladorArbutus.index)
 .post('/add',ControladorArbutus.inserta)
 .post('/',ControladorArbutus.buscar2,ControladorArbutus.mostrar)
-.put('/:key/:value',ControladorArbutus.buscar,ControladorArbutus.actualizar)
 .get('/:key/:value',ControladorArbutus.buscar,ControladorArbutus.mostrar)
+.put('/:key/:value',ControladorArbutus.buscar,ControladorArbutus.actualizar)
 .delete('/:key/:value',ControladorArbutus.buscar,ControladorArbutus.eliminar);
 
 module.exports=Router;
