@@ -13,19 +13,23 @@ const ComarostaSchema = new mongoose.Schema({
         type: String,
         require: true
     },
-    corteza_ramas: {
+    margen: {
         type: String,
         require: true
     },
-    corteza_ramillas: {
+    inflorescencia: {
         type: String,
         require: true
     },
-    peciolos: {
+    peciolos_ramillas: {
         type: String,
         require: true
     },
     hojas: {
+        type: String,
+        require: true
+    },
+    haz: {
         type: String,
         require: true
     },
