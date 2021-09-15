@@ -105,7 +105,7 @@ function buscarvarios(req,res,next){
     }
     if(peciolos){
         peciolos=regex(peciolos);
-        query.peciolos=peciolos;
+        query.peciolos_ramillas=peciolos;
     }
     if(hojas){
         hojas=regex(hojas);
