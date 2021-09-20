@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Filtro</title>
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+		integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+	<!-- Font-Awesome -->
+	<script src="https://kit.fontawesome.com/a16e898408.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<style>
+		.input-hidden {
+			position: absolute;
+			left: -9999px;
+		}
+
+		input[type=checkbox]:checked+label>img {
+			border: 1px solid #fff;
+			box-shadow: 0 0 3px 3px rgb(2, 49, 255);
+		}
+	
+		/* Stuff after this is only to make things more pretty */
+		input[type=checkbox]+label>img {
+			width: 15rem;
+			height: 17rem;
+			transition: 500ms all;
+		}
+
+		input[type=checkbox]:checked+label>img {
+			transform:
+				rotateZ(-10deg) rotateX(10deg);
+		}
+	</style>
+
+	<div class="container pt-5">
+		<div class="col-12">
+			<h2 class="text-center ">Selecciona las caracteristicas que conoces</h2>
+			<h5 class="text-center">En caso de no conocer alguna has click en siguiente</h5>
+		</div>
+	</div>
+
+	<div class="container pt-5 w-75 bg-light">
+
+		<!-- ////// HABITO -->
+		<div class="row filtro" id="habito">
+			<div class="col-12">
+				<h2 class="text-center p-4">Selecciona habito</h2>
+			</div>
+			<div class="col-6 text-center">
+				<input type="checkbox" name="" id="arbol" class="input-hidden habito2" />
+				<label for="arbol">
+					<img src="img/arbol.jpg" alt="" />
+					<h5>Arbol</h5>
+				</label>
+			</div>
+			<div class="col-6 text-center">
+				<input type="checkbox" name="" id="arbusto" class="input-hidden habito2" />
+				<label for="arbusto">
+					<img src="img/arbol.jpg" alt="" />
+					<h5>Arbusto</h5>
+				</label>
+			</div>
+		</div>
+
+
+		<!-- ////// UBICACION -->
+		<div class="row filtro" id="ubicacion" hidden>
+			<div class="col-12">
+				<h2 class="text-center p-4">Ubicacion</h2>
+			</div>
+			<div class="col-12">
+				<div class="container">
+					<div class="row">
+						<div class="col-3"><input type="checkbox" name="" id="Aguascalientes"
+								class="input-hidden ubi" />
+							<label for="Aguascalientes">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Aguascalientes</h5>
+							</label>
+						</div>
+						<div class="col-3"><input type="checkbox" name="" id="Baja California"
+								class="input-hidden ubi" />
+							<label for="Baja California">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Baja California</h5>
+							</label>
+						</div>
+						<div class="col-3"><input type="checkbox" name="" id="Baja California Sur"
+								class="input-hidden ubi" />
+							<label for="Baja California Sur">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Baja California Sur</h5>
+							</label>
+						</div>
+						<div class="col-3"><input type="checkbox" name="" id="Campeche" class="input-hidden ubi" />
+							<label for="Campeche">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Campeche</h5>
+							</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-3"><input type="checkbox" name="" id="Chiapas" class="input-hidden ubi" />
+							<label for="Chiapas">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Chiapas</h5>
+							</label>
+						</div>
+						<div class="col-3"><input type="checkbox" name="" id="Chihuahua" class="input-hidden ubi" />
+							<label for="Chihuahua">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Chihuahua</h5>
+							</label>
+						</div>
+						<div class="col-3"><input type="checkbox" name="" id="Cuidad de Mexico"
+								class="input-hidden ubi" />
+							<label for="Cuidad de Mexico">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Cuidad de Mexico</h5>
+							</label>
+						</div>
+						<div class="col-3"><input type="checkbox" name="" id="Coahuila" class="input-hidden ubi" />
+							<label for="Coahuila">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Coahuila</h5>
+							</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-3"><input type="checkbox" name="" id="Colima" class="input-hidden ubi" />
+							<label for="Colima">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Colima</h5>
+							</label>
+						</div>
+						<div class="col-3"><input type="checkbox" name="" id="Durango" class="input-hidden ubi" />
+							<label for="Durango">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Durango</h5>
+							</label>
+						</div>
+						<div class="col-3"><input type="checkbox" name="" id="Estado de Mexico"
+								class="input-hidden ubi" />
+							<label for="Estado de Mexico">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Estado de Mexico</h5>
+							</label>
+						</div>
+						<div class="col-3"><input type="checkbox" name="" id="Guanajuato" class="input-hidden ubi" />
+							<label for="Guanajuato">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Guanajuato</h5>
+							</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-3"><input type="checkbox" name="" id="Guerrero" class="input-hidden ubi" />
+							<label for="Guerrero">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Guerrero</h5>
+							</label>
+						</div>
+						<div class="col-3"><input type="checkbox" name="" id="Hidalgo" class="input-hidden ubi" />
+							<label for="Hidalgo">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Hidalgo</h5>
+							</label>
+						</div>
+						<div class="col-3"><input type="checkbox" name="" id="Jalisco" class="input-hidden ubi" />
+							<label for="Jalisco">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Jalisco</h5>
+							</label>
+						</div>
+						<div class="col-3"><input type="checkbox" name="" id="Michoacan" class="input-hidden ubi" />
+							<label for="Michoacan">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Michoacan</h5>
+							</label>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-3"><input type="checkbox" name="" id="Morelos" class="input-hidden ubi" />
+							<label for="Morelos">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Morelos</h5>
+							</label>
+						</div>
+						<div class="col-3"><input type="checkbox" name="" id="Nayarit" class="input-hidden ubi" />
+							<label for="Nayarit">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Nayarit</h5>
+							</label>
+						</div>
+						<div class="col-3"><input type="checkbox" name="" id="Nuevo Leon" class="input-hidden ubi" />
+							<label for="Nuevo Leon">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Nuevo Leon</h5>
+							</label>
+						</div>
+						<div class="col-3"><input type="checkbox" name="" id="Oaxaca" class="input-hidden ubi" />
+							<label for="Oaxaca">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Oaxaca</h5>
+							</label>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-3"><input type="checkbox" name="" id="Puebla" class="input-hidden ubi" />
+							<label for="Puebla">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Puebla</h5>
+							</label>
+						</div>
+						<div class="col-3"><input type="checkbox" name="" id="Queretaro" class="input-hidden ubi" />
+							<label for="Queretaro">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Queretaro</h5>
+							</label>
+						</div>
+						<div class="col-3"><input type="checkbox" name="" id="Quintana Roo" class="input-hidden ubi" />
+							<label for="Quintana Roo">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Quintana Roo</h5>
+							</label>
+						</div>
+						<div class="col-3"><input type="checkbox" name="" id="San Luis Potosil"
+								class="input-hidden ubi" />
+							<label for="San Luis Potosil">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>San Luis Potosil</h5>
+							</label>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-3"><input type="checkbox" name="" id="Sinaloa" class="input-hidden ubi" />
+							<label for="Sinaloa">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Sinaloa</h5>
+							</label>
+						</div>
+						<div class="col-3"><input type="checkbox" name="" id="Sonora" class="input-hidden ubi" />
+							<label for="Sonora">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Sonora</h5>
+							</label>
+						</div>
+						<div class="col-3"><input type="checkbox" name="" id="Tabasco" class="input-hidden ubi" />
+							<label for="Tabasco">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Tabasco</h5>
+							</label>
+						</div>
+						<div class="col-3"><input type="checkbox" name="" id="Tamaulipas" class="input-hidden ubi" />
+							<label for="Tamaulipas">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Tamaulipas</h5>
+							</label>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-3"><input type="checkbox" name="" id="Tlaxcala" class="input-hidden ubi" />
+							<label for="Tlaxcala">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Tlaxcala</h5>
+							</label>
+						</div>
+						<div class="col-3"><input type="checkbox" name="" id="Veracruz" class="input-hidden ubi" />
+							<label for="Veracruz">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Veracruz</h5>
+							</label>
+						</div>
+						<div class="col-3"><input type="checkbox" name="" id="Yucatan" class="input-hidden ubi" />
+							<label for="Yucatan">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Yucatan</h5>
+							</label>
+						</div>
+						<div class="col-3"><input type="checkbox" name="" id="Zacatecas" class="input-hidden ubi" />
+							<label for="Zacatecas">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Zacatecas</h5>
+							</label>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- ////// HOJAS -->
+		<div class="row filtro" id="hojas" hidden>
+			<div class="col-12">
+				<h2 class="text-center p-4">Hojas</h2>
+			</div>
+			<div class="col-12">
+				<div class="container">
+					<div class="row">
+						<div class="col-3">
+							<input type="checkbox" name="" id="glabras" class="input-hidden hoja" />
+							<label for="glabras">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Glabras</h5>
+							</label>
+						</div>
+						<div class="col-3">
+							<input type="checkbox" name="" id="ovadas" class="input-hidden hoja" />
+							<label for="ovadas">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Ovadas</h5>
+							</label>
+						</div>
+						<div class="col-3">
+							<input type="checkbox" name="" id="elípticas" class="input-hidden hoja" />
+							<label for="elípticas">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Elípticas</h5>
+							</label>
+						</div>
+						<div class="col-3">
+							<input type="checkbox" name="" id="oblongas" class="input-hidden hoja" />
+							<label for="oblongas">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Oblongas</h5>
+							</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-3">
+							<input type="checkbox" name="" id="herbáceas" class="input-hidden hoja" />
+							<label for="herbáceas">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Herbáceas</h5>
+							</label>
+						</div>
+						<div class="col-3">
+							<input type="checkbox" name="" id="subcoriáceas" class="input-hidden hoja" />
+							<label for="subcoriáceas">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Subcoriáceas</h5>
+							</label>
+						</div>
+						<div class="col-3">
+							<input type="checkbox" name="" id="planas" class="input-hidden hoja" />
+							<label for="planas">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Planas</h5>
+							</label>
+						</div>
+						<div class="col-3">
+							<input type="checkbox" name="" id="deciduas" class="input-hidden hoja" />
+							<label for="deciduas">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Deciduas</h5>
+							</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-3">
+							<input type="checkbox" name="" id="agudo" class="input-hidden hoja" />
+							<label for="agudo">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>ápice agudo</h5>
+							</label>
+						</div>
+						<div class="col-3">
+							<input type="checkbox" name="" id="redondeado" class="input-hidden hoja" />
+							<label for="redondeado">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>ápice redondeado</h5>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ////// HAZ -->
+		<div class="row filtro" id="haz" hidden>
+			<div class="col-12">
+				<h2 class="text-center p-4">Haz</h2>
+			</div>
+			<div class="col-12">
+				<div class="container">
+					<div class="row">
+						<div class="col-4">
+							<input type="checkbox" name="" id="glabro" class="input-hidden has" />
+							<label for="glabro">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Glabro</h5>
+							</label>
+						</div>
+						<div class="col-4">
+							<input type="checkbox" name="" id="lustroso" class="input-hidden has" />
+							<label for="lustroso">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Lustroso</h5>
+							</label>
+						</div>
+						<div class="col-4">
+							<input type="checkbox" name="" id="pubescente" class="input-hidden has" />
+							<label for="pubescente">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Pubescente</h5>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ////// ENVES -->
+
+		<div class="row filtro" id="enves" hidden>
+			<div class="col-12">
+				<h2 class="text-center p-4">Enves</h2>
+			</div>
+			<div class="col-12">
+				<div class="container">
+					<div class="row">
+						<div class="col-4">
+							<input type="checkbox" name="" id="glabr" class="input-hidden env" />
+							<label for="glabr">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Glabro</h5>
+							</label>
+						</div>
+						<div class="col-4">
+							<input type="checkbox" name="" id="densa" class="input-hidden env" />
+							<label for="densa">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Densamente Tomentoso</h5>
+							</label>
+						</div>
+						<div class="col-4">
+							<input type="checkbox" name="" id="espaciada" class="input-hidden env" />
+							<label for="espaciada">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Pubescencia Espaciada</h5>
+							</label>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-4">
+							<input type="checkbox" name="" id="glandula" class="input-hidden env" />
+							<label for="glandula">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Pelos Glandulares</h5>
+							</label>
+						</div>
+						<div class="col-4">
+							<input type="checkbox" name="" id="pubescent" class="input-hidden env" />
+							<label for="pubescent">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Pubescente</h5>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- ////// FLORES-->
+		<div class="row filtro" id="flores" hidden>
+			<div class="col-12">
+				<h2 class="text-center p-4">Flores</h2>
+			</div>
+			<div class="col-12">
+				<div class="container">
+					<div class="row">
+						<div class="col-4 text-center">
+							<input type="checkbox" name="" id="rosas" class="input-hidden flor" />
+							<label for="rosas">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Rosas</h5>
+							</label>
+						</div>
+						<div class="col-4 text-center">
+							<input type="checkbox" name="" id="amarill" class="input-hidden flor" />
+							<label for="amarill">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Amarillas</h5>
+							</label>
+						</div>
+						<div class="col-4 text-center">
+							<input type="checkbox" name="" id="verdosas" class="input-hidden flor" />
+							<label for="verdosas">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Verdosas</h5>
+							</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-4 text-center">
+							<input type="checkbox" name="" id="rojas" class="input-hidden flor" />
+							<label for="rojas">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Rojas</h5>
+							</label>
+						</div>
+						<div class="col-4 text-center">
+							<input type="checkbox" name="" id="cremosas" class="input-hidden flor" />
+							<label for="cremosas">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Cremosas</h5>
+							</label>
+						</div>
+						<div class="col-4 text-center">
+							<input type="checkbox" name="" id="blan" class="input-hidden flor" />
+							<label for="blan">
+								<img src="img/arbol.jpg" alt="" />
+								<h5>Blancas</h5>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- CONTROLES DE DESPLAZAMIENTO -->
+
+	<div class="container w-75 bg-light">
+		<div class="row pt-5 pb-4">
+			<div class="col-6 text-left">
+				<button type="button" class="btn btn-primary" hidden id="reinicio">Iniciar nuevamente</button>
+			</div>
+			<div class="col-6 text-right">
+				<button type="button" class="btn btn-primary" id="prev" hidden>Anterior</button>
+				<button type="button" class="btn btn-primary" id="next">Siguiente</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- TABLAS DINAMICAS -->
+
+	<div class="container pt-4">
+		<div class="row">
+			<div class="col-6" id="tabla1">
+				<h3 class="text-center">Arbutus</h3>
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Nombre</th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody id="arbutus">
+					</tbody>
+				</table>
+			</div>
+			<div class="col-6" id="tabla2">
+				<h3 class="text-center text-white bg-dark">Comarostaphilys</h3>
+				<table class="table table-dark">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Nombre</th>
+							<th scope="col"></th>
+						</tr>
+					</thead>
+					<tbody id="comaros">
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<!-- //MODAL Arbutus -->
+
+	<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button> -->
+
+	<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+		aria-hidden="true" id="ver1">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 id="nom">Nombre</h1>
+				</div>
+				<div class="modal-body">
+					<div class="container pl-4 pr-4">
+						<div class="row">
+							<div class="col-12"><span>
+									<h5>Habito:</h5>
+									<p id="hab">sfsfsf</p>
+								</span></div>
+							<div class="col-12"><span>
+									<h5>Corteza Ramas:</h5>
+									<p id="cr">sfsfsf</p>
+								</span></div>
+							<div class="col-12"><span>
+									<h5>Corteza Ramillas:</h5>
+									<p id="crs">sfsfsf</p>
+								</span></div>
+							<div class="col-12"><span>
+									<h5>Peciolos:</h5>
+									<p id="pec">sfsfsf</p>
+								</span></div>
+						</div>
+						<div class="row">
+							<div class="col-12"><span>
+									<h5>Hojas:</h5>
+									<p id="hoj">sfsfsf</p>
+								</span></div>
+							<div class="col-12"><span>
+									<h5>Haz:</h5>
+									<p id="ha">sfsfsf</p>
+								</span></div>
+							<div class="col-12"><span>
+									<h5>Enves:</h5>
+									<p id="en">sfsfsf</p>
+								</span></div>
+							<div class="col-12"><span>
+									<h5>Flores:</h5>
+									<p id="flo">sfsfsf</p>
+								</span></div>
+						</div>
+						<div class="row">
+							<div class="col-12"><span>
+									<h5>Ubicacion:</h5>
+									<p id="ub">sfsfsf</p>
+								</span></div>
+						</div>
+						<div class="row">
+							<div class="col-4"><img src="img/arbol.jpg" style="width: 8rem;" alt=""></div>
+							<div class="col-4"><img src="img/arbol.jpg" style="width: 8rem;" alt=""></div>
+							<div class="col-4"><img src="img/arbol.jpg" style="width: 8rem;" alt=""></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- //MODAL COMAROS -->
+
+
+	<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+		aria-hidden="true" id="ver2">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 id="nom2">Nombre</h1>
+				</div>
+				<div class="modal-body">
+					<div class="container pl-4 pr-4">
+						<div class="row">
+							<div class="col-12"><span>
+									<h5>Habito:</h5>
+									<p id="hab2">sfsfsf</p>
+								</span></div>
+							<div class="col-12"><span>
+									<h5>Peciolos Ramillas:</h5>
+									<p id="pr">sfsfsf</p>
+								</span></div>
+							<div class="col-12"><span>
+									<h5>Hojas:</h5>
+									<p id="ho">sfsfsf</p>
+								</span></div>
+						</div>
+						<div class="row">
+							<div class="col-12"><span>
+									<h5>Margen:</h5>
+									<p id="mar">sfsfsf</p>
+								</span></div>
+							<div class="col-12"><span>
+									<h5>Haz:</h5>
+									<p id="h">sfsfsf</p>
+								</span></div>
+							<div class="col-12"><span>
+									<h5>Enves:</h5>
+									<p id="env2">sfsfsf</p>
+								</span></div>
+							<div class="col-12"><span>
+									<h5>Inflorescencia:</h5>
+									<p id="inf">sfsfsf</p>
+								</span></div>
+							<div class="col-12"><span>
+									<h5>Flores:</h5>
+									<p id="fl">sfsfsf</p>
+								</span></div>
+						</div>
+						<div class="row">
+							<div class="col-12"><span>
+									<h5>Ubicacion:</h5>
+									<p id="ubi">sfsfsf</p>
+								</span></div>
+						</div>
+						<div class="row">
+							<div class="col-4"><img src="img/arbol.jpg" style="width: 8rem;" alt=""></div>
+							<div class="col-4"><img src="img/arbol.jpg" style="width: 8rem;" alt=""></div>
+							<div class="col-4"><img src="img/arbol.jpg" style="width: 8rem;" alt=""></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+		integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+		crossorigin="anonymous"></script>
+	<script src="js/filtro.js"></script>
+</body>
+
+</html>
