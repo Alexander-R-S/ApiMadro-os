@@ -1,27 +1,29 @@
 $(document).ready(function () {
 
 	//Funcion para ocultar tabla en caso de no resultados.
-	function validar(err1, err2) {
-		if (err1 == 1) {
-			$('#tabla1').prop('hidden', true);
-		}
-		if (err2 == 1) {
-			$('#tabla2').prop('hidden', true);
-		}
-		if (err1 == 1 && err2 == 1) {
-			$('#tabla2').prop('hidden', true);
-			$('#tabla1').prop('hidden', true);
-			$('#next').prop('disabled', true);
-			alert('No hay especies que cumplan con la solicitud, modifica tu seleccion');
-		}
-	}
-	function mostrartablas() {
-		//Rectiva el boton next
-		$('#next').prop('disabled', false);
-		//Se muestran las tablas
-		$('#tabla2').prop('hidden', false);
-		$('#tabla1').prop('hidden', false);
-	}
+	// function validar(err1, err2) {
+	// 	if (err1 == 1) {
+	// 		$('#tabla1').prop('hidden', true);
+	// 	}
+	// 	if (err2 == 1) {
+	// 		$('#tabla2').prop('hidden', true);
+	// 	}
+	// 	if (err1 == 1 && err2 == 1) {
+	// 		$('#tabla2').prop('hidden', true);
+	// 		$('#tabla1').prop('hidden', true);
+	// 		$('#next').prop('disabled', true);
+	// 		alert('No hay especies que cumplan con la solicitud, modifica tu seleccion');
+	// 	}
+	// }
+
+
+	// function mostrartablas() {
+	// 	//Rectiva el boton next
+	// 	$('#next').prop('disabled', false);
+	// 	//Se muestran las tablas
+	// 	$('#tabla2').prop('hidden', false);
+	// 	$('#tabla1').prop('hidden', false);
+	// }
 
 	/////FUNCIONES FETCH
 
@@ -175,6 +177,12 @@ $(document).ready(function () {
 	var prev = "";
 	var cont1 = "";
 	var cont2 = "";
+
+	$('.opciones').on('click', function () {
+			var filtro=$(this).attr('data-target').substr(1);
+			$('.collapse').not(this).prop('hidden', true);
+	});
+
 
 	//CHECKBOXES
 
@@ -348,7 +356,7 @@ $(document).ready(function () {
 		fetch2();
 	});
 
-	///BOTON VER MAS
+	///BOTONES VER MAS
 	$('body').on('click', '.vera', function () {
 		var id = $(this).prop('id');
 		fetchfinala(id);
