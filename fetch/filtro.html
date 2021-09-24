@@ -39,23 +39,23 @@
 		}
 	</style>
 
-	<div class="container pt-5">
-		<div class="col-12">
-			<h2 class="text-center">Elige alguno genero de madroño para iniciar tu busqueda</h2>
+	<!-- /////GENEROS -->
+	<div class="container pt-5" id="generos">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="text-center">Elige alguno genero de madroño para iniciar tu busqueda</h2>
+			</div>
 		</div>
-	</div>
-
-	<div class="container pt-5">
 		<div class="row p-5">
 			<div class="col-6 text-center">
-				<input type="checkbox" name="" id="arbutus" class="input-hidden" />
+				<input type="checkbox" name="arbutus" id="arbutus" class="input-hidden genero" />
 				<label for="arbutus">
 					<img src="img/arbol.jpg" alt="" />
 					<h5>Arbutus</h5>
 				</label>
 			</div>
 			<div class="col-6 text-center">
-				<input type="checkbox" name="" id="comarosta" class="input-hidden habito2" />
+				<input type="checkbox" name="comarosta" id="comarosta" class="input-hidden genero" />
 				<label for="comarosta">
 					<img src="img/arbol.jpg" alt="" />
 					<h5>Comarostaphilys</h5>
@@ -65,7 +65,7 @@
 	</div>
 
 
-	<div class="container pt-5 w-75 bg-light pb-3" id="filtro">
+	<div class="container pt-5 w-75 bg-light pb-3" id="filtro" hidden>
 
 		<div class="row">
 			<div class="container pt-5">
@@ -81,57 +81,57 @@
 		<!-- //BOTONES DE FILTROS -->
 		<div class="row pt-5 pl-5">
 			<p class="pr-1">
-				<button class="btn btn-primary opciones" type="button" data-toggle="collapse" data-target="#habito"
+				<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#habito"
 					aria-expanded="false" aria-controls="collapseExample">
 					Habito
 				</button>
-				<button class="btn btn-primary opciones" type="button" data-toggle="collapse" data-target="#ubicacion"
+				<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#ubicacion"
 					aria-expanded="false" aria-controls="collapseExample">
 					Ubicacion
 				</button>
 			</p>
 
 			<p id="btn-arbutus">
-				<button class="btn btn-success opciones" type="button" data-toggle="collapse" data-target="#cortrm"
+				<button class="btn btn-success" type="button" data-toggle="collapse" data-target="#cortrm"
 					aria-expanded="false" aria-controls="collapseExample">
 					Corteza de Ramas
 				</button>
-				<button class="btn btn-success opciones" type="button" data-toggle="collapse" data-target="#cortrll"
+				<button class="btn btn-success" type="button" data-toggle="collapse" data-target="#cortrll"
 					aria-expanded="false" aria-controls="collapseExample">
 					Corteza de Ramillas
 				</button>
-				<button class="btn btn-success opciones" type="button" data-toggle="collapse" data-target="#peciolos"
+				<button class="btn btn-success" type="button" data-toggle="collapse" data-target="#peciolos"
 					aria-expanded="false" aria-controls="collapseExample">
 					Peciolos
 				</button>
-				<button class="btn btn-success opciones" type="button" data-toggle="collapse" data-target="#hojasa"
+				<button class="btn btn-success" type="button" data-toggle="collapse" data-target="#hojasa"
 					aria-expanded="false" aria-controls="collapseExample">
 					Hojas
 				</button>
-				<button class="btn btn-success opciones" type="button" data-toggle="collapse" data-target="#haza"
+				<button class="btn btn-success" type="button" data-toggle="collapse" data-target="#haza"
 					aria-expanded="false" aria-controls="collapseExample">
 					Haz
 				</button>
-				<button class="btn btn-success opciones" type="button" data-toggle="collapse" data-target="#envesa"
+				<button class="btn btn-success" type="button" data-toggle="collapse" data-target="#envesa"
 					aria-expanded="false" aria-controls="collapseExample">
 					Enves
 				</button>
-				<button class="btn btn-success opciones" type="button" data-toggle="collapse" data-target="#floresa"
+				<button class="btn btn-success" type="button" data-toggle="collapse" data-target="#floresa"
 					aria-expanded="false" aria-controls="collapseExample">
 					Flores
 				</button>
 			</p>
 
 			<p id="btn-comaros">
-				<button class="btn btn-warning opciones" type="button" data-toggle="collapse" data-target="#margen"
+				<button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#margen"
 					aria-expanded="false" aria-controls="collapseExample">
 					Margen
 				</button>
-				<button class="btn btn-warning opciones" type="button" data-toggle="collapse" data-target="#inflore"
+				<button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#inflore"
 					aria-expanded="false" aria-controls="collapseExample">
 					Inflorescencia
 				</button>
-				<button class="btn btn-warning opciones" type="button" data-toggle="collapse" data-target="#peciolosrll"
+				<button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#peciolosrll"
 					aria-expanded="false" aria-controls="collapseExample">
 					Peciolos y Ramillas
 				</button>
@@ -139,17 +139,26 @@
 					aria-expanded="false" aria-controls="collapseExample">
 					Hojas
 				</button> -->
-				<button class="btn btn-warning opciones" type="button" data-toggle="collapse" data-target="#hazc"
+				<button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#hazc"
 					aria-expanded="false" aria-controls="collapseExample">
 					Haz
 				</button>
-				<button class="btn btn-warning opciones" type="button" data-toggle="collapse" data-target="#envesc"
+				<button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#envesc"
 					aria-expanded="false" aria-controls="collapseExample">
 					Enves
 				</button>
-				<button class="btn btn-warning opciones" type="button" data-toggle="collapse" data-target="#floresc"
+				<button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#floresc"
 					aria-expanded="false" aria-controls="collapseExample">
 					Flores
+				</button>
+			</p>
+
+			<p>
+				<button class="btn btn-danger" type="button" id="reiniciar">
+					REINICIAR FILTRO
+				</button>
+				<button class="btn btn-danger" type="button" id="btngeneros">
+					VOLVER A GENEROS
 				</button>
 			</p>
 
@@ -168,14 +177,14 @@
 						</div>
 						<div class="row">
 							<div class="col-6 text-center">
-								<input type="checkbox" name="" id="arbol" class="input-hidden habito2" />
+								<input type="checkbox" name="arbol" id="arbol" class="input-hidden habito2" />
 								<label for="arbol">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Arbol</h5>
 								</label>
 							</div>
 							<div class="col-6 text-center">
-								<input type="checkbox" name="" id="arbusto" class="input-hidden habito2" />
+								<input type="checkbox" name="arbusto" id="arbusto" class="input-hidden habito2" />
 								<label for="arbusto">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Arbusto</h5>
@@ -201,28 +210,28 @@
 							<div class="col-12">
 								<div class="container">
 									<div class="row">
-										<div class="col-3"><input type="checkbox" name="" id="Aguascalientes"
+										<div class="col-3"><input type="checkbox" name="Aguascalientes" id="Aguascalientes"
 												class="input-hidden ubi" />
 											<label for="Aguascalientes">
 												<img src="img/arbol.jpg" alt="" />
 												<h5>Aguascalientes</h5>
 											</label>
 										</div>
-										<div class="col-3"><input type="checkbox" name="" id="Baja California"
+										<div class="col-3"><input type="checkbox" name="Baja California" id="Baja California"
 												class="input-hidden ubi" />
 											<label for="Baja California">
 												<img src="img/arbol.jpg" alt="" />
 												<h5>Baja California</h5>
 											</label>
 										</div>
-										<div class="col-3"><input type="checkbox" name="" id="Baja California Sur"
+										<div class="col-3"><input type="checkbox" name="Baja California Sur" id="Baja California Sur"
 												class="input-hidden ubi" />
 											<label for="Baja California Sur">
 												<img src="img/arbol.jpg" alt="" />
 												<h5>Baja California Sur</h5>
 											</label>
 										</div>
-										<div class="col-3"><input type="checkbox" name="" id="Campeche"
+										<div class="col-3"><input type="checkbox" name="Campeche" id="Campeche"
 												class="input-hidden ubi" />
 											<label for="Campeche">
 												<img src="img/arbol.jpg" alt="" />
@@ -231,28 +240,28 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-3"><input type="checkbox" name="" id="Chiapas"
+										<div class="col-3"><input type="checkbox" name="Chiapas" id="Chiapas"
 												class="input-hidden ubi" />
 											<label for="Chiapas">
 												<img src="img/arbol.jpg" alt="" />
 												<h5>Chiapas</h5>
 											</label>
 										</div>
-										<div class="col-3"><input type="checkbox" name="" id="Chihuahua"
+										<div class="col-3"><input type="checkbox" name="Chihuahua" id="Chihuahua"
 												class="input-hidden ubi" />
 											<label for="Chihuahua">
 												<img src="img/arbol.jpg" alt="" />
 												<h5>Chihuahua</h5>
 											</label>
 										</div>
-										<div class="col-3"><input type="checkbox" name="" id="Cuidad de Mexico"
+										<div class="col-3"><input type="checkbox" name="Cuidad de Mexico" id="Cuidad de Mexico"
 												class="input-hidden ubi" />
 											<label for="Cuidad de Mexico">
 												<img src="img/arbol.jpg" alt="" />
 												<h5>Cuidad de Mexico</h5>
 											</label>
 										</div>
-										<div class="col-3"><input type="checkbox" name="" id="Coahuila"
+										<div class="col-3"><input type="checkbox" name="Coahuila" id="Coahuila"
 												class="input-hidden ubi" />
 											<label for="Coahuila">
 												<img src="img/arbol.jpg" alt="" />
@@ -261,28 +270,28 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-3"><input type="checkbox" name="" id="Colima"
+										<div class="col-3"><input type="checkbox" name="Colima" id="Colima"
 												class="input-hidden ubi" />
 											<label for="Colima">
 												<img src="img/arbol.jpg" alt="" />
 												<h5>Colima</h5>
 											</label>
 										</div>
-										<div class="col-3"><input type="checkbox" name="" id="Durango"
+										<div class="col-3"><input type="checkbox" name="Durango" id="Durango"
 												class="input-hidden ubi" />
 											<label for="Durango">
 												<img src="img/arbol.jpg" alt="" />
 												<h5>Durango</h5>
 											</label>
 										</div>
-										<div class="col-3"><input type="checkbox" name="" id="Estado de Mexico"
+										<div class="col-3"><input type="checkbox" name="Estado de Mexico" id="Estado de Mexico"
 												class="input-hidden ubi" />
 											<label for="Estado de Mexico">
 												<img src="img/arbol.jpg" alt="" />
 												<h5>Estado de Mexico</h5>
 											</label>
 										</div>
-										<div class="col-3"><input type="checkbox" name="" id="Guanajuato"
+										<div class="col-3"><input type="checkbox" name="Guanajuato" id="Guanajuato"
 												class="input-hidden ubi" />
 											<label for="Guanajuato">
 												<img src="img/arbol.jpg" alt="" />
@@ -291,28 +300,28 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-3"><input type="checkbox" name="" id="Guerrero"
+										<div class="col-3"><input type="checkbox" name="Guerrero" id="Guerrero"
 												class="input-hidden ubi" />
 											<label for="Guerrero">
 												<img src="img/arbol.jpg" alt="" />
 												<h5>Guerrero</h5>
 											</label>
 										</div>
-										<div class="col-3"><input type="checkbox" name="" id="Hidalgo"
+										<div class="col-3"><input type="checkbox" name="Hidalgo" id="Hidalgo"
 												class="input-hidden ubi" />
 											<label for="Hidalgo">
 												<img src="img/arbol.jpg" alt="" />
 												<h5>Hidalgo</h5>
 											</label>
 										</div>
-										<div class="col-3"><input type="checkbox" name="" id="Jalisco"
+										<div class="col-3"><input type="checkbox" name="Jalisco" id="Jalisco"
 												class="input-hidden ubi" />
 											<label for="Jalisco">
 												<img src="img/arbol.jpg" alt="" />
 												<h5>Jalisco</h5>
 											</label>
 										</div>
-										<div class="col-3"><input type="checkbox" name="" id="Michoacan"
+										<div class="col-3"><input type="checkbox" name="Michoacan" id="Michoacan"
 												class="input-hidden ubi" />
 											<label for="Michoacan">
 												<img src="img/arbol.jpg" alt="" />
@@ -322,28 +331,28 @@
 									</div>
 
 									<div class="row">
-										<div class="col-3"><input type="checkbox" name="" id="Morelos"
+										<div class="col-3"><input type="checkbox" name="Morelos" id="Morelos"
 												class="input-hidden ubi" />
 											<label for="Morelos">
 												<img src="img/arbol.jpg" alt="" />
 												<h5>Morelos</h5>
 											</label>
 										</div>
-										<div class="col-3"><input type="checkbox" name="" id="Nayarit"
+										<div class="col-3"><input type="checkbox" name="Nayarit" id="Nayarit"
 												class="input-hidden ubi" />
 											<label for="Nayarit">
 												<img src="img/arbol.jpg" alt="" />
 												<h5>Nayarit</h5>
 											</label>
 										</div>
-										<div class="col-3"><input type="checkbox" name="" id="Nuevo Leon"
+										<div class="col-3"><input type="checkbox" name="Nuevo Leon" id="Nuevo Leon"
 												class="input-hidden ubi" />
 											<label for="Nuevo Leon">
 												<img src="img/arbol.jpg" alt="" />
 												<h5>Nuevo Leon</h5>
 											</label>
 										</div>
-										<div class="col-3"><input type="checkbox" name="" id="Oaxaca"
+										<div class="col-3"><input type="checkbox" name="Oaxaca" id="Oaxaca"
 												class="input-hidden ubi" />
 											<label for="Oaxaca">
 												<img src="img/arbol.jpg" alt="" />
@@ -353,28 +362,28 @@
 									</div>
 
 									<div class="row">
-										<div class="col-3"><input type="checkbox" name="" id="Puebla"
+										<div class="col-3"><input type="checkbox" name="Puebla" id="Puebla"
 												class="input-hidden ubi" />
 											<label for="Puebla">
 												<img src="img/arbol.jpg" alt="" />
 												<h5>Puebla</h5>
 											</label>
 										</div>
-										<div class="col-3"><input type="checkbox" name="" id="Queretaro"
+										<div class="col-3"><input type="checkbox" name="Queretaro" id="Queretaro"
 												class="input-hidden ubi" />
 											<label for="Queretaro">
 												<img src="img/arbol.jpg" alt="" />
 												<h5>Queretaro</h5>
 											</label>
 										</div>
-										<div class="col-3"><input type="checkbox" name="" id="Quintana Roo"
+										<div class="col-3"><input type="checkbox" name="Quintana Roo" id="Quintana Roo"
 												class="input-hidden ubi" />
 											<label for="Quintana Roo">
 												<img src="img/arbol.jpg" alt="" />
 												<h5>Quintana Roo</h5>
 											</label>
 										</div>
-										<div class="col-3"><input type="checkbox" name="" id="San Luis Potosil"
+										<div class="col-3"><input type="checkbox" name="San Luis Potosil" id="San Luis Potosil"
 												class="input-hidden ubi" />
 											<label for="San Luis Potosil">
 												<img src="img/arbol.jpg" alt="" />
@@ -384,28 +393,28 @@
 									</div>
 
 									<div class="row">
-										<div class="col-3"><input type="checkbox" name="" id="Sinaloa"
+										<div class="col-3"><input type="checkbox" name="Sinaloa" id="Sinaloa"
 												class="input-hidden ubi" />
 											<label for="Sinaloa">
 												<img src="img/arbol.jpg" alt="" />
 												<h5>Sinaloa</h5>
 											</label>
 										</div>
-										<div class="col-3"><input type="checkbox" name="" id="Sonora"
+										<div class="col-3"><input type="checkbox" name="Sonora" id="Sonora"
 												class="input-hidden ubi" />
 											<label for="Sonora">
 												<img src="img/arbol.jpg" alt="" />
 												<h5>Sonora</h5>
 											</label>
 										</div>
-										<div class="col-3"><input type="checkbox" name="" id="Tabasco"
+										<div class="col-3"><input type="checkbox" name="Tabasco" id="Tabasco"
 												class="input-hidden ubi" />
 											<label for="Tabasco">
 												<img src="img/arbol.jpg" alt="" />
 												<h5>Tabasco</h5>
 											</label>
 										</div>
-										<div class="col-3"><input type="checkbox" name="" id="Tamaulipas"
+										<div class="col-3"><input type="checkbox" name="Tamaulipas" id="Tamaulipas"
 												class="input-hidden ubi" />
 											<label for="Tamaulipas">
 												<img src="img/arbol.jpg" alt="" />
@@ -415,28 +424,28 @@
 									</div>
 
 									<div class="row">
-										<div class="col-3"><input type="checkbox" name="" id="Tlaxcala"
+										<div class="col-3"><input type="checkbox" name="Tlaxcala" id="Tlaxcala"
 												class="input-hidden ubi" />
 											<label for="Tlaxcala">
 												<img src="img/arbol.jpg" alt="" />
 												<h5>Tlaxcala</h5>
 											</label>
 										</div>
-										<div class="col-3"><input type="checkbox" name="" id="Veracruz"
+										<div class="col-3"><input type="checkbox" name="Veracruz" id="Veracruz"
 												class="input-hidden ubi" />
 											<label for="Veracruz">
 												<img src="img/arbol.jpg" alt="" />
 												<h5>Veracruz</h5>
 											</label>
 										</div>
-										<div class="col-3"><input type="checkbox" name="" id="Yucatan"
+										<div class="col-3"><input type="checkbox" name="Yucatan" id="Yucatan"
 												class="input-hidden ubi" />
 											<label for="Yucatan">
 												<img src="img/arbol.jpg" alt="" />
 												<h5>Yucatan</h5>
 											</label>
 										</div>
-										<div class="col-3"><input type="checkbox" name="" id="Zacatecas"
+										<div class="col-3"><input type="checkbox" name="Zacatecas" id="Zacatecas"
 												class="input-hidden ubi" />
 											<label for="Zacatecas">
 												<img src="img/arbol.jpg" alt="" />
@@ -606,21 +615,21 @@
 						</div>
 						<div class="row">
 							<div class="col-4 text-center">
-								<input type="checkbox" name="" id="glabras" class="input-hidden hoja" />
+								<input type="checkbox" name="glabras" id="glabras" class="input-hidden hoja" />
 								<label for="glabras">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Glabras</h5>
 								</label>
 							</div>
 							<div class="col-4 text-center">
-								<input type="checkbox" name="" id="elípticas" class="input-hidden hoja" />
+								<input type="checkbox" name="elípticas" id="elípticas" class="input-hidden hoja" />
 								<label for="elípticas">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Elípticas</h5>
 								</label>
 							</div>
 							<div class="col-4 text-center">
-								<input type="checkbox" name="" id="oblongas" class="input-hidden hoja" />
+								<input type="checkbox" name="oblongas" id="oblongas" class="input-hidden hoja" />
 								<label for="oblongas">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Oblongas</h5>
@@ -629,21 +638,21 @@
 						</div>
 						<div class="row">
 							<div class="col-4 text-center">
-								<input type="checkbox" name="" id="herbáceas" class="input-hidden hoja" />
+								<input type="checkbox" name="herbáceas" id="herbáceas" class="input-hidden hoja" />
 								<label for="herbáceas">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Herbáceas</h5>
 								</label>
 							</div>
 							<div class="col-4 text-center">
-								<input type="checkbox" name="" id="subcoriáceas" class="input-hidden hoja" />
+								<input type="checkbox" name="subcoriáceas" id="subcoriáceas" class="input-hidden hoja" />
 								<label for="subcoriáceas">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Subcoriáceas</h5>
 								</label>
 							</div>
 							<div class="col-4 text-center">
-								<input type="checkbox" name="lanceoladas " id="lanceoladas" class="input-hidden hoja" />
+								<input type="checkbox" name="lanceoladas" id="lanceoladas" class="input-hidden hoja" />
 								<label for="lanceoladas">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Lanceoladas</h5>
@@ -667,16 +676,16 @@
 						</div>
 						<div class="row">
 							<div class="col-4 text-center">
-								<input type="checkbox" name="" id="glabro" class="input-hidden has" />
+								<input type="checkbox" name="glabro" id="glabro" class="input-hidden has" />
 								<label for="glabro">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Glabro</h5>
 								</label>
 							</div>
 							<div class="col-4 text-center">
-								<input type="checkbox" name="glabro (liso)" id="glabro (liso)"
+								<input type="checkbox" name="liso" id="liso"
 									class="input-hidden has" />
-								<label for="glabro (liso)">
+								<label for="liso">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Glabro (liso)</h5>
 								</label>
@@ -722,16 +731,16 @@
 						</div>
 						<div class="row">
 							<div class="col-4 text-center">
-								<input type="checkbox" name="glabro (liso)" id="glabro (liso)"
+								<input type="checkbox" name="glabro (liso)" id="glabro(liso)2"
 									class="input-hidden env" />
-								<label for="glabro (liso)">
+								<label for="glabro(liso)2">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Glabro (liso)</h5>
 								</label>
 							</div>
 							<div class="col-4 text-center">
-								<input type="checkbox" name="cortos" id="cortos" class="input-hidden env" />
-								<label for="cortos">
+								<input type="checkbox" name="cortos" id="cortos2" class="input-hidden env" />
+								<label for="cortos2">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Pelos cortos</h5>
 								</label>
@@ -756,8 +765,8 @@
 								</label>
 							</div>
 							<div class="col-4 text-center">
-								<input type="checkbox" name="pubescen" id="pubescen" class="input-hidden env" />
-								<label for="pubescen">
+								<input type="checkbox" name="pubescen" id="pubescen2" class="input-hidden env" />
+								<label for="pubescen2">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Pubescente</h5>
 								</label>
@@ -788,21 +797,21 @@
 						</div>
 						<div class="row">
 							<div class="col-4 text-center">
-								<input type="checkbox" name="" id="rosas" class="input-hidden flor" />
+								<input type="checkbox" name="rosas" id="rosas" class="input-hidden flor" />
 								<label for="rosas">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Rosas</h5>
 								</label>
 							</div>
 							<div class="col-4 text-center">
-								<input type="checkbox" name="" id="amarill" class="input-hidden flor" />
+								<input type="checkbox" name="amarill" id="amarill" class="input-hidden flor" />
 								<label for="amarill">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Amarillas</h5>
 								</label>
 							</div>
 							<div class="col-4 text-center">
-								<input type="checkbox" name="" id="verdosas" class="input-hidden flor" />
+								<input type="checkbox" name="verdosas" id="verdosas" class="input-hidden flor" />
 								<label for="verdosas">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Verdosas</h5>
@@ -811,8 +820,8 @@
 						</div>
 						<div class="row">
 							<div class="col-4 text-center">
-								<input type="checkbox" name="roj" id="roj" class="input-hidden flor" />
-								<label for="roj">
+								<input type="checkbox" name="roj" id="roj2" class="input-hidden flor" />
+								<label for="roj2">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Rojas</h5>
 								</label>
@@ -825,7 +834,7 @@
 								</label>
 							</div>
 							<div class="col-4 text-center">
-								<input type="checkbox" name="" id="blan" class="input-hidden flor" />
+								<input type="checkbox" name="blan" id="blan" class="input-hidden flor" />
 								<label for="blan">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Blancas</h5>
@@ -851,22 +860,22 @@
 						</div>
 						<div class="row">
 							<div class="col-4 text-center">
-								<input type="checkbox" name="entero" id="entero" class="input-hidden marg" />
-								<label for="entero">
+								<input type="checkbox" name="entero" id="entero2" class="input-hidden marg" />
+								<label for="entero2">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Entero</h5>
 								</label>
 							</div>
 							<div class="col-4 text-center">
-								<input type="checkbox" name="plano" id="plano" class="input-hidden marg" />
-								<label for="plano">
+								<input type="checkbox" name="plano" id="plano2" class="input-hidden marg" />
+								<label for="plano2">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Plano</h5>
 								</label>
 							</div>
 							<div class="col-4 text-center">
-								<input type="checkbox" name="aserrado" id="aserrado" class="input-hidden marg" />
-								<label for="aserrado">
+								<input type="checkbox" name="aserrado" id="aserrado2" class="input-hidden marg" />
+								<label for="aserrado2">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Aserrado</h5>
 								</label>
@@ -874,24 +883,24 @@
 						</div>
 						<div class="row">
 							<div class="col-4 text-center">
-								<input type="checkbox" name="poco revoluto" id="poco revoluto"
+								<input type="checkbox" name="poco revoluto" id="poco revoluto2"
 									class="input-hidden marg" />
-								<label for="poco revoluto">
+								<label for="poco revoluto2">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Poco revoluto</h5>
 								</label>
 							</div>
 							<div class="col-4 text-center">
-								<input type="checkbox" name="poco ondulado" id="poco ondulado"
+								<input type="checkbox" name="poco ondulado" id="poco ondulado2"
 									class="input-hidden marg" />
-								<label for="poco ondulado">
+								<label for="poco ondulado2">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Poco ondulado</h5>
 								</label>
 							</div>
 							<div class="col-4 text-center">
-								<input type="checkbox" name="con dientes" id="con dientes" class="input-hidden marg" />
-								<label for="con dientes">
+								<input type="checkbox" name="con dientes" id="con dientes2" class="input-hidden marg" />
+								<label for="con dientes2">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Con dientes</h5>
 								</label>
@@ -914,23 +923,23 @@
 						</div>
 						<div class="row">
 							<div class="col-4 text-center">
-								<input type="checkbox" name="con pelos glandulares" id="con pelos glandulares"
+								<input type="checkbox" name="con pelos glandulares" id="con pelos glandulares2"
 									class="input-hidden inflo" />
-								<label for="con pelos glandulares">
+								<label for="con pelos glandulares2">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Con pelos glandulares</h5>
 								</label>
 							</div>
 							<div class="col-4 text-center">
-								<input type="checkbox" name="pubescen" id="pubescen" class="input-hidden inflo" />
-								<label for="pubescen">
+								<input type="checkbox" name="pubescen" id="pubescen3" class="input-hidden inflo" />
+								<label for="pubescen3">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Pubescente</h5>
 								</label>
 							</div>
 							<div class="col-4 text-center">
-								<input type="checkbox" name="glabra" id="glabra" class="input-hidden inflo" />
-								<label for="glabra">
+								<input type="checkbox" name="glabra" id="glabra2" class="input-hidden inflo" />
+								<label for="glabra2">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Glabra</h5>
 								</label>
@@ -953,23 +962,23 @@
 						</div>
 						<div class="row">
 							<div class="col-4 text-center">
-								<input type="checkbox" name="con pelos glandulares" id="con pelos glandulares"
-									class="input-hidden pecirll" />
-								<label for="con pelos glandulares">
+								<input type="checkbox" name="con pelos glandulares" id="con pelos glandulares3"
+									class="input-hidden peci" />
+								<label for="con pelos glandulares3">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Con pelos glandulares</h5>
 								</label>
 							</div>
 							<div class="col-4 text-center">
-								<input type="checkbox" name="pubescen" id="pubescen" class="input-hidden pecirll" />
-								<label for="pubescen">
+								<input type="checkbox" name="pubescen" id="pubescen4" class="input-hidden peci" />
+								<label for="pubescen4">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Pubescentes</h5>
 								</label>
 							</div>
 							<div class="col-4 text-center">
-								<input type="checkbox" name="glabr" id="glabr" class="input-hidden pecirll" />
-								<label for="glabr">
+								<input type="checkbox" name="glabr" id="glabr2" class="input-hidden peci" />
+								<label for="glabr2">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Glabros</h5>
 								</label>
@@ -1010,23 +1019,23 @@
 						</div>
 						<div class="row">
 							<div class="col-4 text-center">
-								<input type="checkbox" name="" id="glabro" class="input-hidden has" />
-								<label for="glabro">
+								<input type="checkbox" name="glabro" id="glabro2" class="input-hidden has" />
+								<label for="glabro2">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Glabro</h5>
 								</label>
 							</div>
 							<div class="col-4 text-center">
-								<input type="checkbox" name="glandulares" id="glandulares"
+								<input type="checkbox" name="glandulares" id="glandulares2"
 									class="input-hidden has" />
-								<label for="glandulares">
+								<label for="glandulares2">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Con pelos glandulares</h5>
 								</label>
 							</div>
 							<div class="col-4 text-center">
-								<input type="checkbox" name="pubescente" id="pubescente" class="input-hidden has" />
-								<label for="pubescente">
+								<input type="checkbox" name="pubescente" id="pubescente2" class="input-hidden has" />
+								<label for="pubescente2">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Pubescente</h5>
 								</label>
@@ -1049,22 +1058,22 @@
 						</div>
 						<div class="row">
 							<div class="col-4 text-center">
-								<input type="checkbox" name="pubescen" id="pubescen" class="input-hidden env" />
-								<label for="pubescen">
+								<input type="checkbox" name="pubescen" id="pubescen5" class="input-hidden env" />
+								<label for="pubescen5">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Pubescente</h5>
 								</label>
 							</div>
 							<div class="col-4 text-center">
-								<input type="checkbox" name="glabro" id="glabro" class="input-hidden env" />
-								<label for="glabro">
+								<input type="checkbox" name="glabro" id="glabro3" class="input-hidden env" />
+								<label for="glabro3">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Glabro</h5>
 								</label>
 							</div>
 							<div class="col-4 text-center">
-								<input type="checkbox" name="densamente tomentoso" id="densamente tomentoso" class="input-hidden env" />
-								<label for="densamente tomentoso">
+								<input type="checkbox" name="densamente tomentoso" id="densamente tomentoso2" class="input-hidden env" />
+								<label for="densamente tomentoso2">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Densamente tomentoso</h5>
 								</label>
@@ -1072,15 +1081,15 @@
 						</div>
 						<div class="row">
 							<div class="col-6 text-center">
-								<input type="checkbox" name=glauco" id="glauco" class="input-hidden env" />
-								<label for="glauco">
+								<input type="checkbox" name="glauco" id="glauco2" class="input-hidden env" />
+								<label for="glauco2">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Glauco</h5>
 								</label>
 							</div>
 							<div class="col-6 text-center">
-								<input type="checkbox" name="glandular" id="glandular" class="input-hidden env" />
-								<label for="glandular">
+								<input type="checkbox" name="glandular" id="glandular2" class="input-hidden env" />
+								<label for="glandular2">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Glandular</h5>
 								</label>
@@ -1103,29 +1112,29 @@
 						</div>
 						<div class="row">
 							<div class="col-3 text-center">
-								<input type="checkbox" name="rosa" id="rosa" class="input-hidden flor" />
-								<label for="rosa">
+								<input type="checkbox" name="rosa" id="rosa2" class="input-hidden flor" />
+								<label for="rosa2">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Rosas</h5>
 								</label>
 							</div>
 							<div class="col-3 text-center">
-								<input type="checkbox" name="" id="amarill" class="input-hidden flor" />
-								<label for="amarill">
+								<input type="checkbox" name="amarill" id="amarill2" class="input-hidden flor" />
+								<label for="amarill2">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Amarillas</h5>
 								</label>
 							</div>
 							<div class="col-3 text-center">
-								<input type="checkbox" name="" id="verdosas" class="input-hidden flor" />
-								<label for="verdosas">
+								<input type="checkbox" name="verdosas" id="verdosas2" class="input-hidden flor" />
+								<label for="verdosas2">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Verdosas</h5>
 								</label>
 							</div>
 							<div class="col-3 text-center">
-								<input type="checkbox" name="" id="magenta" class="input-hidden flor" />
-								<label for="magenta">
+								<input type="checkbox" name="magenta" id="magenta2" class="input-hidden flor" />
+								<label for="magenta2">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Magenta</h5>
 								</label>
@@ -1133,29 +1142,29 @@
 						</div>
 						<div class="row">
 							<div class="col-3 text-center">
-								<input type="checkbox" name="roj" id="roj" class="input-hidden flor" />
-								<label for="roj">
+								<input type="checkbox" name="roj" id="rojo2" class="input-hidden flor" />
+								<label for="rojo2">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Rojas</h5>
 								</label>
 							</div>
 							<div class="col-3 text-center">
-								<input type="checkbox" name="crem" id="crem" class="input-hidden flor" />
-								<label for="crem">
+								<input type="checkbox" name="crem" id="crem2" class="input-hidden flor" />
+								<label for="crem2">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Cremas</h5>
 								</label>
 							</div>
 							<div class="col-3 text-center">
-								<input type="checkbox" name="blancas" id="blancas" class="input-hidden flor" />
-								<label for="blancas">
+								<input type="checkbox" name="blancas" id="blancas2" class="input-hidden flor" />
+								<label for="blancas2">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Blancas</h5>
 								</label>
 							</div>
 							<div class="col-3 text-center">
-								<input type="checkbox" name="" id="verde pálido" class="input-hidden flor" />
-								<label for="verde pálido">
+								<input type="checkbox" name="verde pálido" id="verde pálido2" class="input-hidden flor" />
+								<label for="verde pálido2">
 									<img src="img/arbol.jpg" alt="" />
 									<h5>Verde pálido</h5>
 								</label>
@@ -1170,7 +1179,7 @@
 
 	<!-- TABLAS DINAMICAS -->
 
-	<div class="container p-4" id="tablaarb">
+	<div class="container w-75 tables p-4" id="tablaarb" hidden>
 		<div class="row">
 			<div class="col-12">
 				<h3 class="text-center">Arbutus</h3>
@@ -1182,14 +1191,14 @@
 							<th scope="col"></th>
 						</tr>
 					</thead>
-					<tbody id="arbutus">
+					<tbody id="tarbutus">
 					</tbody>
 				</table>
 			</div>
 		</div>
 	</div>
 
-	<div class="container p-4" id="tablacoma">
+	<div class="container w-75 tables p-4" id="tablacoma" hidden>
 		<div class="row">
 			<div class="col-12">
 				<h3 class="text-center text-white bg-dark">Comarostaphilys</h3>
@@ -1201,588 +1210,13 @@
 							<th scope="col"></th>
 						</tr>
 					</thead>
-					<tbody id="comaros">
+					<tbody id="tcomaros">
 					</tbody>
 				</table>
 			</div>
 		</div>
 	</div>
 
-	<div class="container pt-5 w-75 bg-light">
-
-		<!-- ////// HABITO -->
-		<!-- <div class="row filtro" id="habito" hidden>
-			<div class="col-12">
-				<h2 class="text-center p-4">Selecciona habito</h2>
-			</div>
-			<div class="col-6 text-center">
-				<input type="checkbox" name="" id="arbol" class="input-hidden habito2" />
-				<label for="arbol">
-					<img src="img/arbol.jpg" alt="" />
-					<h5>Arbol</h5>
-				</label>
-			</div>
-			<div class="col-6 text-center">
-				<input type="checkbox" name="" id="arbusto" class="input-hidden habito2" />
-				<label for="arbusto">
-					<img src="img/arbol.jpg" alt="" />
-					<h5>Arbusto</h5>
-				</label>
-			</div>
-		</div> -->
-
-
-		<!-- ////// UBICACION -->
-		<!-- <div class="row filtro" id="ubicacion" hidden>
-			<div class="col-12">
-				<h2 class="text-center p-4">Ubicacion</h2>
-			</div>
-			<div class="col-12">
-				<div class="container">
-					<div class="row">
-						<div class="col-3"><input type="checkbox" name="" id="Aguascalientes"
-								class="input-hidden ubi" />
-							<label for="Aguascalientes">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Aguascalientes</h5>
-							</label>
-						</div>
-						<div class="col-3"><input type="checkbox" name="" id="Baja California"
-								class="input-hidden ubi" />
-							<label for="Baja California">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Baja California</h5>
-							</label>
-						</div>
-						<div class="col-3"><input type="checkbox" name="" id="Baja California Sur"
-								class="input-hidden ubi" />
-							<label for="Baja California Sur">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Baja California Sur</h5>
-							</label>
-						</div>
-						<div class="col-3"><input type="checkbox" name="" id="Campeche" class="input-hidden ubi" />
-							<label for="Campeche">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Campeche</h5>
-							</label>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-3"><input type="checkbox" name="" id="Chiapas" class="input-hidden ubi" />
-							<label for="Chiapas">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Chiapas</h5>
-							</label>
-						</div>
-						<div class="col-3"><input type="checkbox" name="" id="Chihuahua" class="input-hidden ubi" />
-							<label for="Chihuahua">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Chihuahua</h5>
-							</label>
-						</div>
-						<div class="col-3"><input type="checkbox" name="" id="Cuidad de Mexico"
-								class="input-hidden ubi" />
-							<label for="Cuidad de Mexico">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Cuidad de Mexico</h5>
-							</label>
-						</div>
-						<div class="col-3"><input type="checkbox" name="" id="Coahuila" class="input-hidden ubi" />
-							<label for="Coahuila">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Coahuila</h5>
-							</label>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-3"><input type="checkbox" name="" id="Colima" class="input-hidden ubi" />
-							<label for="Colima">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Colima</h5>
-							</label>
-						</div>
-						<div class="col-3"><input type="checkbox" name="" id="Durango" class="input-hidden ubi" />
-							<label for="Durango">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Durango</h5>
-							</label>
-						</div>
-						<div class="col-3"><input type="checkbox" name="" id="Estado de Mexico"
-								class="input-hidden ubi" />
-							<label for="Estado de Mexico">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Estado de Mexico</h5>
-							</label>
-						</div>
-						<div class="col-3"><input type="checkbox" name="" id="Guanajuato" class="input-hidden ubi" />
-							<label for="Guanajuato">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Guanajuato</h5>
-							</label>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-3"><input type="checkbox" name="" id="Guerrero" class="input-hidden ubi" />
-							<label for="Guerrero">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Guerrero</h5>
-							</label>
-						</div>
-						<div class="col-3"><input type="checkbox" name="" id="Hidalgo" class="input-hidden ubi" />
-							<label for="Hidalgo">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Hidalgo</h5>
-							</label>
-						</div>
-						<div class="col-3"><input type="checkbox" name="" id="Jalisco" class="input-hidden ubi" />
-							<label for="Jalisco">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Jalisco</h5>
-							</label>
-						</div>
-						<div class="col-3"><input type="checkbox" name="" id="Michoacan" class="input-hidden ubi" />
-							<label for="Michoacan">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Michoacan</h5>
-							</label>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-3"><input type="checkbox" name="" id="Morelos" class="input-hidden ubi" />
-							<label for="Morelos">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Morelos</h5>
-							</label>
-						</div>
-						<div class="col-3"><input type="checkbox" name="" id="Nayarit" class="input-hidden ubi" />
-							<label for="Nayarit">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Nayarit</h5>
-							</label>
-						</div>
-						<div class="col-3"><input type="checkbox" name="" id="Nuevo Leon" class="input-hidden ubi" />
-							<label for="Nuevo Leon">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Nuevo Leon</h5>
-							</label>
-						</div>
-						<div class="col-3"><input type="checkbox" name="" id="Oaxaca" class="input-hidden ubi" />
-							<label for="Oaxaca">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Oaxaca</h5>
-							</label>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-3"><input type="checkbox" name="" id="Puebla" class="input-hidden ubi" />
-							<label for="Puebla">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Puebla</h5>
-							</label>
-						</div>
-						<div class="col-3"><input type="checkbox" name="" id="Queretaro" class="input-hidden ubi" />
-							<label for="Queretaro">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Queretaro</h5>
-							</label>
-						</div>
-						<div class="col-3"><input type="checkbox" name="" id="Quintana Roo" class="input-hidden ubi" />
-							<label for="Quintana Roo">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Quintana Roo</h5>
-							</label>
-						</div>
-						<div class="col-3"><input type="checkbox" name="" id="San Luis Potosil"
-								class="input-hidden ubi" />
-							<label for="San Luis Potosil">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>San Luis Potosil</h5>
-							</label>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-3"><input type="checkbox" name="" id="Sinaloa" class="input-hidden ubi" />
-							<label for="Sinaloa">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Sinaloa</h5>
-							</label>
-						</div>
-						<div class="col-3"><input type="checkbox" name="" id="Sonora" class="input-hidden ubi" />
-							<label for="Sonora">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Sonora</h5>
-							</label>
-						</div>
-						<div class="col-3"><input type="checkbox" name="" id="Tabasco" class="input-hidden ubi" />
-							<label for="Tabasco">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Tabasco</h5>
-							</label>
-						</div>
-						<div class="col-3"><input type="checkbox" name="" id="Tamaulipas" class="input-hidden ubi" />
-							<label for="Tamaulipas">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Tamaulipas</h5>
-							</label>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-3"><input type="checkbox" name="" id="Tlaxcala" class="input-hidden ubi" />
-							<label for="Tlaxcala">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Tlaxcala</h5>
-							</label>
-						</div>
-						<div class="col-3"><input type="checkbox" name="" id="Veracruz" class="input-hidden ubi" />
-							<label for="Veracruz">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Veracruz</h5>
-							</label>
-						</div>
-						<div class="col-3"><input type="checkbox" name="" id="Yucatan" class="input-hidden ubi" />
-							<label for="Yucatan">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Yucatan</h5>
-							</label>
-						</div>
-						<div class="col-3"><input type="checkbox" name="" id="Zacatecas" class="input-hidden ubi" />
-							<label for="Zacatecas">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Zacatecas</h5>
-							</label>
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</div> -->
-
-		<!-- ////// HOJAS -->
-		<!-- <div class="row filtro" id="hojas" hidden>
-			<div class="col-12">
-				<h2 class="text-center p-4">Hojas</h2>
-			</div>
-			<div class="col-12">
-				<div class="container">
-					<div class="row">
-						<div class="col-3">
-							<input type="checkbox" name="" id="glabras" class="input-hidden hoja" />
-							<label for="glabras">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Glabras</h5>
-							</label>
-						</div>
-						<div class="col-3">
-							<input type="checkbox" name="" id="ovadas" class="input-hidden hoja" />
-							<label for="ovadas">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Ovadas</h5>
-							</label>
-						</div>
-						<div class="col-3">
-							<input type="checkbox" name="" id="elípticas" class="input-hidden hoja" />
-							<label for="elípticas">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Elípticas</h5>
-							</label>
-						</div>
-						<div class="col-3">
-							<input type="checkbox" name="" id="oblongas" class="input-hidden hoja" />
-							<label for="oblongas">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Oblongas</h5>
-							</label>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-3">
-							<input type="checkbox" name="" id="herbáceas" class="input-hidden hoja" />
-							<label for="herbáceas">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Herbáceas</h5>
-							</label>
-						</div>
-						<div class="col-3">
-							<input type="checkbox" name="" id="subcoriáceas" class="input-hidden hoja" />
-							<label for="subcoriáceas">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Subcoriáceas</h5>
-							</label>
-						</div>
-						<div class="col-3">
-							<input type="checkbox" name="" id="planas" class="input-hidden hoja" />
-							<label for="planas">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Planas</h5>
-							</label>
-						</div>
-						<div class="col-3">
-							<input type="checkbox" name="" id="deciduas" class="input-hidden hoja" />
-							<label for="deciduas">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Deciduas</h5>
-							</label>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-3">
-							<input type="checkbox" name="" id="agudo" class="input-hidden hoja" />
-							<label for="agudo">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>ápice agudo</h5>
-							</label>
-						</div>
-						<div class="col-3">
-							<input type="checkbox" name="" id="redondeado" class="input-hidden hoja" />
-							<label for="redondeado">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>ápice redondeado</h5>
-							</label>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> -->
-
-		<!-- ////// HAZ -->
-		<!-- <div class="row filtro" id="haz" hidden>
-			<div class="col-12">
-				<h2 class="text-center p-4">Haz</h2>
-			</div>
-			<div class="col-12">
-				<div class="container">
-					<div class="row">
-						<div class="col-4">
-							<input type="checkbox" name="" id="glabro" class="input-hidden has" />
-							<label for="glabro">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Glabro</h5>
-							</label>
-						</div>
-						<div class="col-4">
-							<input type="checkbox" name="" id="lustroso" class="input-hidden has" />
-							<label for="lustroso">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Lustroso</h5>
-							</label>
-						</div>
-						<div class="col-4">
-							<input type="checkbox" name="" id="pubescente" class="input-hidden has" />
-							<label for="pubescente">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Pubescente</h5>
-							</label>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div> -->
-
-		<!-- ////// ENVES -->
-
-		<!-- <div class="row filtro" id="enves" hidden>
-			<div class="col-12">
-				<h2 class="text-center p-4">Enves</h2>
-			</div>
-			<div class="col-12">
-				<div class="container">
-					<div class="row">
-						<div class="col-4">
-							<input type="checkbox" name="" id="glabr" class="input-hidden env" />
-							<label for="glabr">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Glabro</h5>
-							</label>
-						</div>
-						<div class="col-4">
-							<input type="checkbox" name="" id="densa" class="input-hidden env" />
-							<label for="densa">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Densamente Tomentoso</h5>
-							</label>
-						</div>
-						<div class="col-4">
-							<input type="checkbox" name="" id="espaciada" class="input-hidden env" />
-							<label for="espaciada">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Pubescencia Espaciada</h5>
-							</label>
-						</div>
-					</div>
-
-					<div class="row">
-						<div class="col-4">
-							<input type="checkbox" name="" id="glandula" class="input-hidden env" />
-							<label for="glandula">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Pelos Glandulares</h5>
-							</label>
-						</div>
-						<div class="col-4">
-							<input type="checkbox" name="" id="pubescent" class="input-hidden env" />
-							<label for="pubescent">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Pubescente</h5>
-							</label>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</div> -->
-
-		<!-- ////// FLORES-->
-		<!-- <div class="row filtro" id="flores" hidden>
-			<div class="col-12">
-				<h2 class="text-center p-4">Flores</h2>
-			</div>
-			<div class="col-12">
-				<div class="container">
-					<div class="row">
-						<div class="col-4 text-center">
-							<input type="checkbox" name="" id="rosas" class="input-hidden flor" />
-							<label for="rosas">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Rosas</h5>
-							</label>
-						</div>
-						<div class="col-4 text-center">
-							<input type="checkbox" name="" id="amarill" class="input-hidden flor" />
-							<label for="amarill">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Amarillas</h5>
-							</label>
-						</div>
-						<div class="col-4 text-center">
-							<input type="checkbox" name="" id="verdosas" class="input-hidden flor" />
-							<label for="verdosas">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Verdosas</h5>
-							</label>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-4 text-center">
-							<input type="checkbox" name="" id="rojas" class="input-hidden flor" />
-							<label for="rojas">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Rojas</h5>
-							</label>
-						</div>
-						<div class="col-4 text-center">
-							<input type="checkbox" name="" id="cremosas" class="input-hidden flor" />
-							<label for="cremosas">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Cremosas</h5>
-							</label>
-						</div>
-						<div class="col-4 text-center">
-							<input type="checkbox" name="" id="blan" class="input-hidden flor" />
-							<label for="blan">
-								<img src="img/arbol.jpg" alt="" />
-								<h5>Blancas</h5>
-							</label>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</div> -->
-
-	</div>
-
-	<!-- CONTROLES DE DESPLAZAMIENTO -->
-
-	<!-- <div class="container w-75 bg-light">
-		<div class="row pt-5 pb-4">
-			<div class="col-6 text-left">
-				<button type="button" class="btn btn-primary" hidden id="reinicio">Iniciar nuevamente</button>
-			</div>
-			<div class="col-6 text-right">
-				<button type="button" class="btn btn-primary" id="prev" hidden>Anterior</button>
-				<button type="button" class="btn btn-primary" id="next">Siguiente</button>
-			</div>
-		</div>
-	</div> -->
-
-	<!-- TABLAS DINAMICAS -->
-
-	<!-- <div class="container p-4" id="tablaarb">
-		<div class="row">
-			<div class="col-12">
-				<h3 class="text-center">Arbutus</h3>
-				<table class="table">
-					<thead>
-						<tr>
-							<th scope="col">#</th>
-							<th scope="col">Nombre</th>
-							<th scope="col"></th>
-						</tr>
-					</thead>
-					<tbody id="arbutus">
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</div>
-
-	<div class="container p-4" id="tablacoma">
-		<div class="row">
-			<div class="col-12">
-				<h3 class="text-center text-white bg-dark">Comarostaphilys</h3>
-				<table class="table table-dark">
-					<thead>
-						<tr>
-							<th scope="col">#</th>
-							<th scope="col">Nombre</th>
-							<th scope="col"></th>
-						</tr>
-					</thead>
-					<tbody id="comaros">
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</div> -->
-
-	<!-- 
-	<div class="container pt-4">
-		<div class="row">
-			<div class="col-6" id="tabla1">
-				<h3 class="text-center">Arbutus</h3>
-				<table class="table">
-					<thead>
-						<tr>
-							<th scope="col">#</th>
-							<th scope="col">Nombre</th>
-							<th scope="col"></th>
-						</tr>
-					</thead>
-					<tbody id="arbutus">
-					</tbody>
-				</table>
-			</div>
-			<div class="col-6" id="tabla2">
-				<h3 class="text-center text-white bg-dark">Comarostaphilys</h3>
-				<table class="table table-dark">
-					<thead>
-						<tr>
-							<th scope="col">#</th>
-							<th scope="col">Nombre</th>
-							<th scope="col"></th>
-						</tr>
-					</thead>
-					<tbody id="comaros">
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</div> -->
 
 	<!-- //MODAL Arbutus -->
 
