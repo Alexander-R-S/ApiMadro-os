@@ -1,5 +1,10 @@
 $(document).ready(function () {
 
+//VARIABLES
+	var obj = {};
+	var cont1 = "";
+	var gen="";
+
 	/////FETCH LLENAR TABLA ARBUTUS
 	function fetch1() {
 		fetch('http://localhost:3000/arbutus', {
@@ -14,6 +19,7 @@ $(document).ready(function () {
 						'<button type="button" id="' + dato.nombre + '" class="btn btn-primary vera">Ver mas</button>'
 						+ '</td></tr>';
 				});
+				cont1=cont;
 				document.getElementById("tarbutus").innerHTML = cont;
 			}).catch(function (error) {
 				console.log(error);
@@ -33,6 +39,7 @@ $(document).ready(function () {
 						'<button type="button" id="' + dato.nombre + '"class="btn btn-primary verc">Ver mas</button>'
 						+ '</td></tr>';
 				});
+				cont1=cont;
 				document.getElementById("tcomaros").innerHTML = cont;
 			}).catch(function (error) {
 				console.log(error);
@@ -149,11 +156,6 @@ $(document).ready(function () {
 		delete obj.peciolos_ramillas;
 		delete obj.hojas;
 	}
-
-	//VARIABLES
-	var obj = {};
-	var cont1 = "";
-	var gen="";
 
 	//MOSTRAR FILTROS DEPENDIENDO GENERO
 
