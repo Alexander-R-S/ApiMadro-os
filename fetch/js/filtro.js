@@ -46,7 +46,7 @@ $(document).ready(function () {
 
 	/////FETCH FILTRO
 	function fetchpost(dato) {
-		if ($('#arbutus').prop('checked') == true) {
+		if ($('#Arbutus').prop('checked') == true) {
 			fetch('http://localhost:3000/arbutus', {
 				method: "POST",
 				body: JSON.stringify(dato),
@@ -69,7 +69,7 @@ $(document).ready(function () {
 					//console.log(error);
 				});
 		}
-		if ($('#comarosta').prop('checked') == true) {
+		if ($('#Comarostaphylis').prop('checked') == true) {
 			fetch('http://localhost:3000/comarosta', {
 				method: "POST",
 				body: JSON.stringify(dato),
@@ -170,7 +170,8 @@ $(document).ready(function () {
 	function selecciones() {
 		document.getElementById("selecciones").innerHTML = "";
 		Object.entries(obj).map(([token, value]) => {
-			document.getElementById("selecciones").innerHTML += `${token} : ${value}\n`;
+				document.getElementById("selecciones").innerHTML +=`
+				<li><b>${token} :</b> ${value}</b>\n	`;	
 		});
 	}
 
@@ -183,15 +184,17 @@ $(document).ready(function () {
 		$('.collapse').collapse('hide');
 		$('input[type=checkbox]').not(this).prop('checked', false);
 		gen = $(this).prop('id');
-		if (gen == "arbutus") {
+		if (gen == "Arbutus") {
 			fetch1();
+			$('#titu').html(gen);
 			$('#tablaarb').prop('hidden', false);
 			$('#tablacoma').prop('hidden', true);
 			$('#btn-comaros').prop('hidden', true);
 			$('#btn-arbutus').prop('hidden', false);
 		}
-		if (gen == "comarosta") {
+		if (gen == "Comarostaphylis") {
 			fetch2();
+			$('#titu').html(gen);
 			$('#tablacoma').prop('hidden', false);
 			$('#tablaarb').prop('hidden', true);
 			$('#btn-arbutus').prop('hidden', true);

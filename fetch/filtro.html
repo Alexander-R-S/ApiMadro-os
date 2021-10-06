@@ -48,15 +48,15 @@
 		</div>
 		<div class="row p-5">
 			<div class="col-6 text-center">
-				<input type="checkbox" name="arbutus" id="arbutus" class="input-hidden genero" />
-				<label for="arbutus">
+				<input type="checkbox" name="Arbutus" id="Arbutus" class="input-hidden genero" />
+				<label for="Arbutus">
 					<img src="img/arbol.jpg" alt="" />
 					<h5>Arbutus</h5>
 				</label>
 			</div>
 			<div class="col-6 text-center">
-				<input type="checkbox" name="comarosta" id="comarosta" class="input-hidden genero" />
-				<label for="comarosta">
+				<input type="checkbox" name="Comarostaphylis" id="Comarostaphylis" class="input-hidden genero" />
+				<label for="Comarostaphylis">
 					<img src="img/arbol.jpg" alt="" />
 					<h5>Comarostaphilys</h5>
 				</label>
@@ -71,15 +71,21 @@
 			<div class="container pt-5">
 				<div class="row">
 					<div class="col-12">
-						<h2 class="text-center ">Selecciona las caracteristicas que conoces</h2>
+						<h1 class="text-center pb-2" id="titu">Genero</h1>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<h2 class="text-center">Selecciona las caracteristicas que conoces</h2>
 					</div>
 				</div>
 			</div>
 		</div>
-		
-		<div class="row pt-5 pl-5">
+
 		<!-- //BOTONES DE FILTROS -->
-			<div class="col-8">
+		<div class="row pt-5 pl-5">
+		
+			<div class="col-7">
 				<p class="pr-1">
 					<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#habito"
 						aria-expanded="false" id="btnhab" aria-controls="collapseExample">
@@ -163,10 +169,32 @@
 				</p>
 			</div>
 		<!-- //HISTORIAL DEL FILTRO -->
-			<div class="col-4">
-				<textarea id="selecciones" cols="30" rows="10"></textarea>
+			<div class="col-5">
+				<div class="container">
+					<div class="row">
+						<div class="col-12"><h5 class="">Historial de Busqueda</h5></div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<ul id="selecciones">
+							</ul>
+						</div>
+					</div>
+				</div>
 			</div>
 			
+		</div>
+
+		<!-- //BREADCRUMBS -->
+		<div class="row">
+			<div class="col-12">
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb">
+					  <li class="breadcrumb-item"><a href="#">Arbutus</a></li>
+					  <li class="breadcrumb-item"><a href="#">Library</a></li>
+					</ol>
+				  </nav>
+			</div>
 		</div>
 
 		<!-- //FILTROS -->

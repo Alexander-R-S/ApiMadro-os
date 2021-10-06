@@ -76,7 +76,7 @@ function buscar(req, res, next) {
 
 //Funcion para agregarle el operador LIKE a los valores de la consulta
 function regex(param) {
-    param = { '$regex': param, '$options': 'i' };
+    param = { '$regex': param, '$options': 'i'};
     return param;
 }
 
@@ -151,10 +151,6 @@ function buscar2(req, res, next) {
         req.body.error = error;
         next();
     })
-    //    query={
-    //        nombre,
-    //        habito
-    // };
 }
 
 function mostrar(req, res) {

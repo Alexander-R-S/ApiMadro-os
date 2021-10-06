@@ -45,7 +45,9 @@ const ArbutusSchema = new mongoose.Schema({
         type:Object,
         require:true
     }
-})
+});
+
+ArbutusSchema.index({nombre:1,habito:1,corteza_ramas:1,corteza_ramillas:1,peciolos:1,hojas:1,haz:1,enves:1,flores:1,ubicacion:1}, { unique: true });
 
 const Arbutus = mongoose.model('arbutus', ArbutusSchema);
 module.exports = Arbutus;
