@@ -170,8 +170,10 @@ $(document).ready(function () {
 	function selecciones() {
 		document.getElementById("selecciones").innerHTML = "";
 		Object.entries(obj).map(([token, value]) => {
-				document.getElementById("selecciones").innerHTML +=`
-				<li><b>${token} :</b> ${value}</b>\n	`;	
+			if (value != "") {
+				document.getElementById("selecciones").innerHTML += `
+				<li><b>${token} :</b> ${value}</b>\n	`;
+			}
 		});
 	}
 
