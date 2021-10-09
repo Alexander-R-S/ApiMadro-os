@@ -202,7 +202,7 @@ $(document).ready(function () {
 			$('#btn-arbutus').prop('hidden', true);
 			$('#btn-comaros').prop('hidden', false);
 		}
-		if ($('#arbutus').prop('checked') == false && $('#comarosta').prop('checked') == false) {
+		if ($('#Arbutus').prop('checked') == false && $('#Comarostaphylis').prop('checked') == false) {
 			$('#filtro').prop('hidden', true);
 			$('.tables').prop('hidden', true);
 		}
@@ -271,12 +271,12 @@ $(document).ready(function () {
 		$('.peci').not(this).prop('checked', false);
 		if ($(this).prop('checked') == false) {
 			color('.btnpec', 0);
-			if ($('#arbutus').prop('checked') == true) { obj.peciolos = "" } else {
+			if ($('#Arbutus').prop('checked') == true) { obj.peciolos = "" } else {
 				obj.peciolos_ramillas = "";
 			}
 		} else {
 			color('.btnpec', 1);
-			if ($('#arbutus').prop('checked') == true) { obj.peciolos = peci } else {
+			if ($('#Arbutus').prop('checked') == true) { obj.peciolos = peci } else {
 				obj.peciolos_ramillas = peci;
 			}
 			setTimeout(fetchpost, 500, obj);
@@ -412,8 +412,8 @@ $(document).ready(function () {
 	$('#reiniciar').on('click', function () {
 		$('.collapse :checkbox').prop('checked', false);
 		$('.collapse').collapse('hide');
-		if ($('#arbutus').prop('checked') == true) { fetch1() }
-		if ($('#comarosta').prop('checked') == true) { fetch2() }
+		if ($('#Arbutus').prop('checked') == true) { fetch1() }
+		if ($('#Comarostaphylis').prop('checked') == true) { fetch2() }
 		$('#selecciones').html("");
 		reset();
 	});
