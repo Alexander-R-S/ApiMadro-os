@@ -3,7 +3,7 @@ const router = expres.Router();
 const passport = require('passport');
 
 router.get('/',(req, res, next) => {
-    res.render('index');
+    res.render('registro');
 });
 
 router.get('/registro', (req, res, next) => {
@@ -11,8 +11,8 @@ router.get('/registro', (req, res, next) => {
 });
 
 router.post('/registro', passport.authenticate('local-singup',{
-    successRedirect: '/perfil',
-    failureRedirect: '/registro',
+    successRedirect: 'login',
+    failureRedirect: 'registro',
     passReqToCallback: true
 }));
 

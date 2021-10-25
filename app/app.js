@@ -1,8 +1,12 @@
 const express = require('express');
 const cors= require('cors');
+const engine = require('ejs-mate');//motor de plantillas 
+const path = require('path');
 const passport = require('passport');
 const expressession = require('express-session');
 const flash = require('connect-flash');
+const router = express.Router();
+router.use(express.static('./views/css'))
 
 //Instanciar rutas
 const rutasArbutus=require('./rutas/rutasArbutus');
@@ -10,7 +14,9 @@ const rutasComarosta=require('./rutas/rutasComarostaphylis');
 const rutasUsuario = require('./rutas/rutasUsuario');
 const app=express();
 require('./passport/local-auth');
-
+app.set('views', path.join(__dirname, './views'));
+app.engine('ejs', engine);
+app.set('view engine', 'ejs');
 
 app.use(cors());
 app.use(express.json({limit: '50mb'}));
