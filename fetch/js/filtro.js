@@ -101,7 +101,6 @@ $(document).ready(function () {
 		}).then(res => res.json())
 			.then(function (data) {
 				//console.log(data);
-
 				$('#nom').html(data.arbutus[0].nombre);
 				$('#hab').html(data.arbutus[0].habito);
 				$('#cr').html(data.arbutus[0].corteza_ramas);
@@ -111,7 +110,10 @@ $(document).ready(function () {
 				$('#ha').html(data.arbutus[0].haz);
 				$('#en').html(data.arbutus[0].enves);
 				$('#flo').html(data.arbutus[0].flores);
-				$('#ub').html(data.arbutus[0].ubicacion);
+				$('#ub').html(data.arbutus[0].ubicacion.join(', '));
+				$('#imga1').attr('src',"");
+				$('#imga2').attr('src',"");
+				$('#imga3').attr('src',"");
 				$('#imga1').attr('src',data.arbutus[0].imagenes.imagen1);
 				$('#imga2').attr('src',data.arbutus[0].imagenes.imagen2);
 				$('#imga3').attr('src',data.arbutus[0].imagenes.imagen3);
@@ -136,7 +138,10 @@ $(document).ready(function () {
 				$('#env2').html(data.comarosta[0].enves);
 				$('#inf').html(data.comarosta[0].inflorescencia);
 				$('#fl').html(data.comarosta[0].flores);
-				$('#ubi').html(data.comarosta[0].ubicacion);
+				$('#ubi').html(data.comarosta[0].ubicacion.join(', '));
+				$('#imgc1').attr('src',"");
+				$('#imgc2').attr('src',"");
+				$('#imgc3').attr('src',"");
 				$('#imgc1').attr('src',data.comarosta[0].imagenes.imagen1);
 				$('#imgc2').attr('src',data.comarosta[0].imagenes.imagen2);
 				$('#imgc3').attr('src',data.comarosta[0].imagenes.imagen3);
