@@ -100,17 +100,21 @@ $(document).ready(function () {
 			method: 'GET',
 		}).then(res => res.json())
 			.then(function (data) {
-				console.log(data);
-				document.getElementById("nom").innerHTML = data.arbutus[0].nombre;
-				document.getElementById("hab").innerHTML = data.arbutus[0].habito;
-				document.getElementById("cr").innerHTML = data.arbutus[0].corteza_ramas;
-				document.getElementById("crs").innerHTML = data.arbutus[0].corteza_ramillas;
-				document.getElementById("pec").innerHTML = data.arbutus[0].peciolos;
-				document.getElementById("hoj").innerHTML = data.arbutus[0].hojas;
-				document.getElementById("ha").innerHTML = data.arbutus[0].haz;
-				document.getElementById("en").innerHTML = data.arbutus[0].enves;
-				document.getElementById("flo").innerHTML = data.arbutus[0].flores;
-				document.getElementById("ub").innerHTML = data.arbutus[0].ubicacion;
+				//console.log(data);
+
+				$('#nom').html(data.arbutus[0].nombre);
+				$('#hab').html(data.arbutus[0].habito);
+				$('#cr').html(data.arbutus[0].corteza_ramas);
+				$('#crs').html(data.arbutus[0].corteza_ramillas);
+				$('#pec').html(data.arbutus[0].peciolos);
+				$('#hoj').html(data.arbutus[0].hojas);
+				$('#ha').html(data.arbutus[0].haz);
+				$('#en').html(data.arbutus[0].enves);
+				$('#flo').html(data.arbutus[0].flores);
+				$('#ub').html(data.arbutus[0].ubicacion);
+				$('#imga1').attr('src',data.arbutus[0].imagenes.imagen1);
+				$('#imga2').attr('src',data.arbutus[0].imagenes.imagen2);
+				$('#imga3').attr('src',data.arbutus[0].imagenes.imagen3);
 			}).catch(function (error) {
 				console.log(error);
 			});
@@ -123,16 +127,19 @@ $(document).ready(function () {
 		}).then(res => res.json())
 			.then(function (data) {
 				//console.log(data);
-				document.getElementById("nom2").innerHTML = data.comarosta[0].nombre;
-				document.getElementById("hab2").innerHTML = data.comarosta[0].habito;
-				document.getElementById("pr").innerHTML = data.comarosta[0].peciolos_ramillas;
-				document.getElementById("ho").innerHTML = data.comarosta[0].hojas;
-				document.getElementById("mar").innerHTML = data.comarosta[0].margen;
-				document.getElementById("h").innerHTML = data.comarosta[0].haz;
-				document.getElementById("env2").innerHTML = data.comarosta[0].enves;
-				document.getElementById("inf").innerHTML = data.comarosta[0].inflorescencia;
-				document.getElementById("fl").innerHTML = data.comarosta[0].flores;
-				document.getElementById("ubi").innerHTML = data.comarosta[0].ubicacion;
+				$('#nom2').html(data.comarosta[0].nombre);
+				$('#hab2').html(data.comarosta[0].habito);
+				$('#pr').html(data.comarosta[0].peciolos_ramillas);
+				$('#ho').html(data.comarosta[0].hojas);
+				$('#mar').html(data.comarosta[0].margen);
+				$('#h').html(data.comarosta[0].haz);
+				$('#env2').html(data.comarosta[0].enves);
+				$('#inf').html(data.comarosta[0].inflorescencia);
+				$('#fl').html(data.comarosta[0].flores);
+				$('#ubi').html(data.comarosta[0].ubicacion);
+				$('#imgc1').attr('src',data.comarosta[0].imagenes.imagen1);
+				$('#imgc2').attr('src',data.comarosta[0].imagenes.imagen2);
+				$('#imgc3').attr('src',data.comarosta[0].imagenes.imagen3);
 			}).catch(function (error) {
 				console.log(error);
 			});
