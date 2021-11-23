@@ -73,6 +73,10 @@ function fetcheditar1(id) {
 			let src2 = data.arbutus[0].imagenes.imagen2;
 			let src3 = data.arbutus[0].imagenes.imagen3;
 
+			$('#foto1').attr('src',"");
+			$('#foto2').attr('src',"");
+			$('#foto3').attr('src',"");
+
 			if (src1) { $('#foto1').attr('src', src1); }
 			if (src2) { $('#foto2').attr('src', src2); }
 			if (src3) { $('#foto3').attr('src', src3); }
@@ -276,56 +280,34 @@ $('#limpia').on('click', function () {
 	limpia();
 });
 
+//BOTON ELIMINAR Imagen
+$('.delimg').on('click', function () {
+	var id = $('#id').val();
+	var imgs=$(this).attr("id");
+	if (arrayestados(2)) { return false; }
+	let dato = new FormData(document.getElementById('formarbu2'));
+	dato.append('ubicacion', estados);
+	let img1 = $('#foto1').attr('src'); 
+	let img2 = $('#foto2').attr('src');
+	let img3 = $('#foto3').attr('src'); 
+	switch (imgs) {
+		case "1":
+			img1="";
+			break;
+		case "2":
+			img2="";
+			break;
+		case "3":
+			img3="";
+			break;
+	}
+		dato.append('img1', img1);
+		dato.append('img2', img2);
+		dato.append('img3', img3);
+
+		const entradas = Object.fromEntries(dato.entries());
+		const datos = JSON.stringify(entradas);
+		fetcheditar2(id, datos);
+});
 
 
-//validar campos
-	// function validar() {
-	// 	$('input[type=text]').each(function (i, v) {
-	// 		if (this.value.length < 1) {
-	// 			vacio = 1;
-	// 			return false;
-	// 		}
-	// 		vacio = 0;
-	// 	});
-	// }
-
-	// function base64(file, callback) {
-	// 	var reader = new FileReader();
-	// 	reader.onload = function () { callback(JSON.stringify(reader.result)) };
-	// 	reader.readAsText(file);
-	// }
-	// base64(imgs[0], function (img1) { 
-	// 	console.log(img1);
-	// });
-
-
-	// for (var entrie of dato.entries()) {
-	// 	console.log(entrie[0] + ': ' + entrie[1]);
-	// }
-
-
-	// validar();
-	// if (vacio == 1) {
-	// 	alert('Todos los campos son requeridos');
-	// } else {	
-	///fetchinsert(dato);
-	// }
-
-	//Generar base64
-	// if (imgs.length > 0) {
-	// 	var imageFile = imgs[0];
-	// 	var fileReader = new FileReader();
-	// 	fileReader.onload = function(fileLoadedEvent) {
-	// 	  var srcData = fileLoadedEvent.target.result;
-	// 	  var newImage = document.createElement('img');
-	// 	  newImage.src = srcData;
-	// 	  document.getElementById("dummy").innerHTML = newImage.outerHTML;
-	// 	  document.getElementById("txt").value = document.getElementById("dummy").innerHTML;
-	// 	}
-	// 	fileReader.readAsDataURL(imageFile);
-	//   }
-
-	// Imprimir objeto data
-	//for (var entrie of data.entries()) {
-	// 		console.log(entrie[0]+ ': ' + entrie[1]); 
-	// }
