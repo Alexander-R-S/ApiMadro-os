@@ -1,10 +1,7 @@
-const expres = require('express');
-const router = expres.Router();
+const express = require('express');
+const router = express.Router();
 const passport = require('passport');
-
-router.get('/',(req, res, next) => {
-    res.render('registro');
-});
+router.use(express.static('./app/public'));
 
 router.get('/registro', (req, res, next) => {
     res.render('registro');
@@ -21,24 +18,31 @@ router.get('/login', (req, res, next) => {
 });
 
 router.post('/login', passport.authenticate('local-singin',{
-    successRedirect: '/perfil',
-    failureRedirect: '/login',
+    successRedirect: 'newArbutus',
+    failureRedirect: 'login',
     passReqToCallback: true
 }));
 
 router.get('/logout', (req, res, next) => {
     req.logOut();
-    res.redirect('/');
+    res.redirect('/usuario/login');
 });
- 
+
 router.get('/perfil', isAuthenticated, (req, res, next) => {
     res.render('perfil');
+});
+
+router.get('/newarbutus', isAuthenticated, (req, res, next) => {
+    res.render('newArbutus');
+});
+router.get('/newcomarostaphylis', isAuthenticated, (req, res, next) => {
+    res.render('newComarostaphylis');
 });
 
 function isAuthenticated(req, res, next) {
     if(req.isAuthenticated()) {
         return next();
     }
-    res.redirect('/');
+    res.redirect('/usuario/login');
 };
 module.exports = router;

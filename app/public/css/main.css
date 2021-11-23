@@ -3077,6 +3077,27 @@ html.no-csstransitions .home-content__main {
   color: rgba(255, 255, 255, 0.5);
   position: relative;
 }
+.b-arbutus {
+  background-color: #151515;
+  background-image: url("../img/Filtro/tessellata.jpg");
+  background-repeat: repeat;
+  background-position: center, center;
+  padding-top: 15rem;
+  padding-bottom: 12rem;
+  color: rgba(255, 255, 255, 0.5);
+  position: relative;
+}
+
+.b-com {
+  background-color: #151515;
+  background-image: url("../img/Filtro/com.jpg");
+  background-repeat: inherit;
+  background-position: center, center;
+  padding-top: 15rem;
+  padding-bottom: 12rem;
+  color: rgba(255, 255, 255, 0.5);
+  position: relative;
+}
 
 .s-contact .overlay {
   position: absolute;

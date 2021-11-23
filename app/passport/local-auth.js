@@ -27,13 +27,13 @@ passport.use('local-singup', new localStrategy({
     const replic = await User.findOne({ email: email });
     console.log(replic);
     if(replic){
-        return done(null, false, req.flash('singupMessage', 'No se puedo hacer el registro porque el correo ya existe'));
+        return done(null, false, req.flash('singupMessage', 'No se pudo hacer el registro porque el usuario ya existe'));
     } else {
         const newUser = new User();
         newUser.email = email;
         newUser.password = newUser.encryptPassword(password);//asi es como se sifra los datos que se estubieron preparando
-        await console.log(newUser);
-        //await newUser.save();
+        console.log(newUser);
+        await newUser.save();
         done(null, newUser);
     }
 }));
@@ -46,7 +46,7 @@ passport.use('local-singin', new localStrategy({
 
     const user = await User.findOne({email: email});
     if(!user) {
-        return done(null, false, req.flash('singinMessage', 'usuario no encontrado'));
+        return done(null, false, req.flash('singinMessage', 'Usuario no encontrado'));
     }
     if(!user.comparePassword(password)) {
         return done(null, false, req.flash('singinMessage', 'Contraseña incorrecta'));

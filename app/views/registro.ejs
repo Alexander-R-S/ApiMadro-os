@@ -1,6 +1,3 @@
-<% if (singupMessage.length > 0) { %>
-    <div><%= singupMessage %></div>
-<% } %>
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
@@ -9,14 +6,15 @@
     <meta charset="utf-8">
     <title>Madroños</title>
     <meta name="description" content="">
-    <meta name="TechnoGenesis" content="">
+    <meta name="TechnoGenesis" content=""> 
 
     <!-- mobile specific metas
     ================================================== -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- CSS
     ================================================== -->
+    
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css"/>
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,800" rel="stylesheet" />
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/vendor.css">
@@ -52,25 +50,28 @@
 
                 <div class="collapse navbar-collapse" id="ftco-nav">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active"><a href="./index.html" class="nav-link">Index</a></li>
-                        <li class="nav-item"><a href="./buscador.html" class="nav-link">Buscador</a></li>
-                        <li class="nav-item"><a href="./glosario.html" class="nav-link">Glosario</a></li>
+                        <li class="nav-item active"><a href="#" class="nav-link">Index</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header> <!-- end s-header -->
-
+    
     <!--Login-->
     <section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="img/hero-bg.jpg"
         data-natural-width=3000 data-natural-height=2000 data-position-y=center>
-
         <div class="overlay"></div>
         <div class="shadow-overlay"></div>
         <div class="home-content">
             <div class="container loginTarget">
                 <div class="row">
                     <div class="col-12 text-center">
+                        <% if (singupMessage.length > 0) { %>
+                            <div class="alert alert-success alert-dismissible">
+                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                <strong><%= singupMessage %>!</strong> Intente con un usuario diferente.
+                            </div>
+                        <% } %>
                         <div class="login-page">
                             <div class="form">
                                 <form action="registro" class="login-form" method="POST">
