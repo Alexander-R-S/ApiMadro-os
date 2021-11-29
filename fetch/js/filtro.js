@@ -171,10 +171,10 @@ $(document).ready(function () {
 	//FUNCION CAMBIO DE COLOR BOTONES FILTRO
 	function color(btn, opt) {
 		if (opt == 1) {
-			$(btn).addClass('btn-dark');
+			$(btn).css("background", "red");
 		}
 		if (opt == 0) {
-			$(btn).removeClass('btn-dark');
+			$(btn).css("background", "blue");
 		}
 	}
 
