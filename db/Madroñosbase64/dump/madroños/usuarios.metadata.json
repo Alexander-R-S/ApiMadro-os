@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"madroños.usuarios"}],"uuid":"a9ae32c47a79439089c2487f4015cf0f"}
